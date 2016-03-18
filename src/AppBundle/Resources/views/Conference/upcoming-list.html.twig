@@ -1,0 +1,43 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <form class="form-inline">
+        <a href="/upcoming/t/all" class="label label-default conf-tag">All tags</a>
+        {% for tag in tags %}
+            <a href="/upcoming/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+        {% endfor %}
+    </form>
+
+    <h2>Upcoming Conferences</h2>
+    <div class="well">
+    {% for item in upcomingConfs %}
+        <div class="item-box">
+            <span class="conf-name">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
+            Location: {{ item.location.name }}<br>
+            <div class="btn-group" role="group">
+                <a href="{{ item.conference.website }}" class="btn btn-default">
+                    <i class="fa fa-globe"></i>
+                    Website
+                </a>
+                <a href="https://twitter.com/{{ item.conference.twitter }}" class="btn btn-default">
+                    <i class="fa fa-twitter"></i>
+                    Twitter
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <p>
+        <div class="btn-group" role="group">
+        {% for p in pages %}
+            <a href="/upcoming/t/{{ tag }}/{{ p }}" class="btn btn-default {{ p == page ? 'active' }}">{{ p }}</a>
+        {% endfor %}
+        </div>
+    </p>
+    </div>
+
+{% endblock %}

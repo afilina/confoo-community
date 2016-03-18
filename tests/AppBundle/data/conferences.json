@@ -1,0 +1,1293 @@
+[
+    {
+        "key": "confoo",
+        "name": "ConFoo",
+        "tags": ["php", "dotnet", "accessibility", "databases", "devops", "html", "css", "iot", "java", "js", "ecommerce", "nodejs", "mobile", "ruby", "performance", "quality", "security"],
+        "first_event": "2010-03-08",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "ConFoo 2010",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2010-03-08",
+                "event_end": "2010-03-12",
+                "session_feed": "https://confoo.ca/2010/sessions.json",
+                "speaker_feed": "https://confoo.ca/2010/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2011",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2011-03-07",
+                "event_end": "2011-03-11",
+                "session_feed": "https://confoo.ca/2011/sessions.json",
+                "speaker_feed": "https://confoo.ca/2011/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2012",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2012-02-27",
+                "event_end": "2012-03-02",
+                "session_feed": "https://confoo.ca/2012/sessions.json",
+                "speaker_feed": "https://confoo.ca/2012/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2013",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2013-02-25",
+                "event_end": "2013-03-01",
+                "session_feed": "https://confoo.ca/2013/sessions.json",
+                "speaker_feed": "https://confoo.ca/2013/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2014",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2014-02-24",
+                "event_end": "2014-12-28",
+                "session_feed": "https://confoo.ca/2014/sessions.json",
+                "speaker_feed": "https://confoo.ca/2014/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2015",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2015-02-16",
+                "event_end": "2015-02-20",
+                "session_feed": "https://confoo.ca/2015/sessions.json",
+                "speaker_feed": "https://confoo.ca/2015/speakers.json",
+                "hashtag": "#confoo"
+            },
+            {
+                "name": "ConFoo 2016",
+                "location": {
+                    "name": "Montreal, QC, Canada"
+                },
+                "event_start": "2016-02-22",
+                "event_end": "2016-02-26",
+                "cfp_start": "2015-08-21",
+                "cfp_end": "2015-09-20",
+                "session_feed": "https://confoo.ca/2016/sessions.json",
+                "speaker_feed": "https://confoo.ca/2016/speakers.json",
+                "hashtag": "#confoo",
+                "organizers": [
+                    {
+                        "name": "Yann Larrivée",
+                        "twitter": "@ylarrivee"
+                    },
+                    {
+                        "name": "Anna Filina",
+                        "twitter": "@afilina"
+                    }
+                ]
+            }
+        ],
+        "website": "https://confoo.ca",
+        "twitter": "@confooca"
+    },
+    {
+            "key": "wecamp",
+            "name": "WeCamp",
+            "tags": ["php", "development process"],
+            "first_event": "2014-08-25",
+            "last_event": "",
+            "events": [
+                {
+                    "name": "WeCamp 2014",
+                    "location": {
+                        "name": "De Kluut, The Netherlands"
+                    },
+                    "event_start": "2014-08-25",
+                    "event_end": "2014-08-29",
+                    "cfp_start": "",
+                    "cfp_end": "",
+                    "session_feed": "",
+                    "speaker_feed": "",
+                    "organizers": [
+                        {
+                            "name": "Stefan Koopmanschap",
+                            "twitter": "@skoop"
+                        },
+                        {
+                            "name": "Mike van Riel",
+                            "twitter": "@mvriel"
+                        },
+                        {
+                            "name": "Jelrik van Hal",
+                            "twitter": "@jelrikvh"
+                        },
+                        {
+                            "name": "Monique Engelage",
+                            "twitter": "@gwendolyn68"
+                        },
+                        {
+                            "name": "Marjolein van Elteren",
+                            "twitter": "@TearSong"
+                        }
+                    ]
+                },
+                {
+                    "name": "WeCamp 2015",
+                    "location": {
+                        "name": "De Kluut, The Netherlands"
+                    },
+                    "event_start": "2015-08-25",
+                    "event_end": "2015-08-29",
+                    "cfp_start": "",
+                    "cfp_end": "",
+                    "session_feed": "",
+                    "speaker_feed": "",
+                    "organizers": [
+                        {
+                            "name": "Stefan Koopmanschap",
+                            "twitter": "@skoop"
+                        },
+                        {
+                            "name": "Mike van Riel",
+                            "twitter": "@mvriel"
+                        },
+                        {
+                            "name": "Jelrik van Hal",
+                            "twitter": "@jelrikvh"
+                        },
+                        {
+                            "name": "Monique Engelage",
+                            "twitter": "@gwendolyn68"
+                        },
+                        {
+                            "name": "Marjolein van Elteren",
+                            "twitter": "@TearSong"
+                        }
+                    ]
+                },
+                {
+                    "name": "WeCamp 2016",
+                    "location": {
+                        "name": "De Kluut, The Netherlands"
+                    },
+                    "event_start": "2016-08-23",
+                    "event_end": "2016-08-27",
+                    "cfp_start": "",
+                    "cfp_end": "",
+                    "session_feed": "",
+                    "speaker_feed": "",
+                    "organizers": [
+                        {
+                            "name": "Stefan Koopmanschap",
+                            "twitter": "@skoop"
+                        },
+                        {
+                            "name": "Mike van Riel",
+                            "twitter": "@mvriel"
+                        },
+                        {
+                            "name": "Monique Engelage",
+                            "twitter": "@gwendolyn68"
+                        },
+                        {
+                            "name": "Marjolein van Elteren",
+                            "twitter": "@TearSong"
+                        },
+                        {
+                            "name": "Ramon de la Fuente",
+                            "twitter": "@f_u_e_n_t_e"
+                        }
+                    ]
+                }
+            ],
+            "website": "https://weca.mp/",
+            "twitter": "@wecamp16"
+        },
+    {
+        "key": "phpbnl",
+        "name": "PHPBenelux",
+        "tags": ["php"],
+        "first_event": "2010-01-29",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "PHPBenelux Conference 2016",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2016-01-29",
+                "event_end": "2016-01-30",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Kana Yeh",
+                        "twitter": "@MissYeh"
+                    },
+                    {
+                        "name": "Stijn Janssen",
+                        "twitter": "@stijnj"
+                    },
+                    {
+                        "name": "Richard Tuin",
+                        "twitter": "@Richard_Tuin"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2015",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2015-01-23",
+                "event_end": "2015-01-24",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Kana Yeh",
+                        "twitter": "@MissYeh"
+                    },
+                    {
+                        "name": "Richard Tuin",
+                        "twitter": "@Richard_Tuin"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2014",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2014-01-24",
+                "event_end": "2014-01-25",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Jeroen van Dijk",
+                        "twitter": "@jrvandijk"
+                    },
+                    {
+                        "name": "Richard Tuin",
+                        "twitter": "@Richard_Tuin"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2013",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2013-01-25",
+                "event_end": "2013-01-26",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Jeroen van Dijk",
+                        "twitter": "@jrvandijk"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2012",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2012-01-27",
+                "event_end": "2012-01-28",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Jeroen van Dijk",
+                        "twitter": "@jrvandijk"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2011",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2011-01-28",
+                "event_end": "2011-01-29",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Martin De Keijzer",
+                        "twitter": "@Martin1982"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Stefan Koopmanschap",
+                        "twitter": "@skoop"
+                    },
+                    {
+                        "name": "Kana Yeh",
+                        "twitter": "@MissYeh"
+                    }
+                ]
+            },
+            {
+                "name": "PHPBenelux Conference 2010",
+                "location": {
+                    "name": "Antwerp, Belgium"
+                },
+                "event_start": "2010-01-29",
+                "event_end": "2010-01-30",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Michelangelo van Dam",
+                        "twitter": "@DragonBe"
+                    },
+                    {
+                        "name": "Thijs Feryn",
+                        "twitter": "@ThijsFeryn"
+                    },
+                    {
+                        "name": "Paul Borgermans",
+                        "twitter": "@paulborgermans"
+                    },
+                    {
+                        "name": "Rein Velt",
+                        "twitter": "@velt"
+                    },
+                    {
+                        "name": "Leon Luijkx"
+                    },
+                    {
+                        "name": "Stefan Koopmanschap",
+                        "twitter": "@skoop"
+                    },
+                    {
+                        "name": "Kana Yeh",
+                        "twitter": "@MissYeh"
+                    },
+                    {
+                        "name": "Patrick Allaert",
+                        "twitter": "@patrick_allaert"
+                    },
+                    {
+                        "name": "Felix De Vliegher",
+                        "twitter": "@felixdv"
+                    }
+                ]
+            }
+        ],
+        "website": "https://conference.phpbenelux.eu",
+        "twitter": "@phpbenelux"
+    },
+    {
+        "key": "dpc",
+        "name": "Dutch PHP Conference",
+        "tags": ["php"],
+        "first_event": "2016-06-23",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "DPC16",
+                "location": {
+                    "name": "Amsterdam, Netherlands"
+                },
+                "event_start": "2016-06-23",
+                "event_end": "2016-06-25",
+                "cfp_start": "2016-01-08",
+                "cfp_end": "2016-02-22",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                ]
+            }
+        ],
+        "website": "http://www.phpconference.nl/",
+        "twitter": "@dpcon"
+    },
+    {
+        "key": "phpsouthcoast",
+        "name": "PHP South Coast",
+        "tags": ["php"],
+        "first_event": "2015-07-18",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": false
+        },
+        "events": [
+            {
+                "name": "PHP South Coast 2015",
+                "location": {
+                    "name": "Portsmouth, UK"
+                },
+                "event_start": "2015-07-18",
+                "event_end": "2015-07-18",
+                "cfp_start": "2014-12-08",
+                "cfp_end": "2015-01-12",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "James Titcumb",
+                        "twitter": "@asgrim"
+                    },
+                    {
+                        "name": "David Baker",
+                        "twitter": "@fully_baked"
+                    },
+                    {
+                        "name": "Rich Sage",
+                        "twitter": "@rich_81"
+                    },
+                    {
+                        "name": "Alex Ross",
+                        "twitter": "@rossey"
+                    },
+                    {
+                        "name": "Steve Lacey",
+                        "twitter": "@stevelacey"
+                    },
+                    {
+                        "name": "David Hulbert",
+                        "twitter": "@dave1010"
+                    },
+                    {
+                        "name": "Phil Bennett",
+                        "twitter": "@phil_bennett"
+                    },
+                    {
+                        "name": "Dasha Luna",
+                        "twitter": "@dashaluna"
+                    },
+                    {
+                        "name": "Lee Boynton",
+                        "twitter": "@leeboynton"
+                    },
+                    {
+                        "name": "Ashley Pinner",
+                        "twitter": "@neothermic"
+                    },
+                    {
+                        "name": "Hannah Titcumb",
+                        "twitter": "@hanzor"
+                    }
+                ]
+            },
+            {
+                "name": "PHP South Coast 2016",
+                "location": {
+                    "name": "Portsmouth, UK"
+                },
+                "event_start": "2016-06-11",
+                "event_end": "2016-06-11",
+                "cfp_start": "2015-12-01",
+                "cfp_end": "2016-01-12",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "James Titcumb",
+                        "twitter": "@asgrim"
+                    },
+                    {
+                        "name": "Rich Sage",
+                        "twitter": "@rich_81"
+                    },
+                    {
+                        "name": "Ashley Pinner",
+                        "twitter": "@neothermic"
+                    },
+                    {
+                        "name": "Lee Boynton",
+                        "twitter": "@leeboynton"
+                    },
+                    {
+                        "name": "Michael Cullum",
+                        "twitter": "@michaelcullumuk"
+                    },
+                    {
+                        "name": "Gary Hockin",
+                        "twitter": "@GeeH"
+                    },
+                    {
+                        "name": "Alex Ross",
+                        "twitter": "@rossey"
+                    },
+                    {
+                        "name": "Hannah Titcumb",
+                        "twitter": "@hanzor"
+                    },
+                    {
+                        "name": "Dave Hulbert",
+                        "twitter": "@dave1010"
+                    },
+                    {
+                        "name": "Christopher Hoult",
+                        "twitter": "@choult"
+                    },
+                    {
+                        "name": "Lee Stone",
+                        "twitter": "@leesto"
+                    }
+                ]
+            }
+        ],
+        "website": "https://www.phpsouthcoast.co.uk/",
+        "twitter": "@phpsouthcoast"
+    },
+    {
+        "key": "cakefest",
+        "name": "CakeFest",
+        "tags": ["php", "cakephp"],
+        "first_event": "2016-05-26",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "CakeFest 2016",
+                "location": {
+                    "name": "Amsterdam, Netherlands"
+                },
+                "event_start": "2016-05-26",
+                "event_end": "2016-05-29",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Larry E. Masters",
+                        "twitter": "@PhpNut"
+                    }
+                ]
+            }
+        ],
+        "website": "http://cakefest.org/",
+        "twitter": "@cakephp"
+    },
+    {
+        "key": "phptek",
+        "name": "php[tek]",
+        "tags": ["php"],
+        "first_event": "2016-05-23",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "php[tek] 2016",
+                "location": {
+                    "name": "St. Louis, MO, USA"
+                },
+                "event_start": "2016-05-23",
+                "event_end": "2016-05-27",
+                "cfp_start": "2015-12-14",
+                "cfp_end": "2016-01-16",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Eli White",
+                        "twitter": "@EliW"
+                    },
+                    {
+                        "name": "Heather White",
+                        "twitter": "@CattyCreations"
+                    },
+                    {
+                        "name": "Kevin Bruce",
+                        "twitter": "@kevinbruce"
+                    },
+                    {
+                        "name": "Oscar Merida",
+                        "twitter": "@omerida"
+                    },
+                    {
+                        "name": "Sandy Smith",
+                        "twitter": "@SandyS1"
+                    }
+                ]
+            },
+            {
+                "name": "php[tek] 2015",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2015-05-18",
+                "event_end": "2015-05-22",
+                "cfp_start": "2014-12-16",
+                "cfp_end": "2015-01-19",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Eli White",
+                        "twitter": "@EliW"
+                    },
+                    {
+                        "name": "Heather White",
+                        "twitter": "@CattyCreations"
+                    },
+                    {
+                        "name": "Kevin Bruce",
+                        "twitter": "@kevinbruce"
+                    },
+                    {
+                        "name": "Oscar Merida",
+                        "twitter": "@omerida"
+                    },
+                    {
+                        "name": "Sandy Smith",
+                        "twitter": "@SandyS1"
+                    },
+                    {
+                        "name": "Beth Tucker Long",
+                        "twitter": "@e3BethT"
+                    }
+                ]
+            },
+            {
+                "name": "php[tek] 2014",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2014-05-19",
+                "event_end": "2014-05-23",
+                "cfp_start": "2013-12-09",
+                "cfp_end": "2014-01-10",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Eli White",
+                        "twitter": "@EliW"
+                    },
+                    {
+                        "name": "Heather White",
+                        "twitter": "@CattyCreations"
+                    },
+                    {
+                        "name": "Kevin Bruce",
+                        "twitter": "@kevinbruce"
+                    },
+                    {
+                        "name": "Oscar Merida",
+                        "twitter": "@omerida"
+                    },
+                    {
+                        "name": "Sandy Smith",
+                        "twitter": "@SandyS1"
+                    }
+                ]
+            },
+            {
+                "name": "php[tek] 2013",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2013-05-14",
+                "event_end": "2013-05-17",
+                "cfp_start": "2012-12-13",
+                "cfp_end": "2013-01-15",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Eli White",
+                        "twitter": "@EliW"
+                    },
+                    {
+                        "name": "Kevin Bruce",
+                        "twitter": "@kevinbruce"
+                    },
+                    {
+                        "name": "Oscar Merida",
+                        "twitter": "@omerida"
+                    },
+                    {
+                        "name": "Sandy Smith",
+                        "twitter": "@SandyS1"
+                    },
+                    {
+                        "name": "Beth Tucker Long",
+                        "twitter": "@e3BethT"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2012",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2012-05-22",
+                "event_end": "2012-05-25",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Cal Evans",
+                        "twitter": "@calevans"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    },
+                    {
+                        "name": "Keith Casey",
+                        "twitter": "@caseysoftware"
+                    },
+                    {
+                        "name": "Beth Tucker Long",
+                        "twitter": "@e3BethT"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2011",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2011-05-24",
+                "event_end": "2011-05-27",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    },
+                    {
+                        "name": "Cal Evans",
+                        "twitter": "@calevans"
+                    },
+                    {
+                        "name": "Keith Casey",
+                        "twitter": "@caseysoftware"
+                    },
+                    {
+                        "name": "Beth Tucker Long",
+                        "twitter": "@e3BethT"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2009",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2009-05-19",
+                "event_end": "2009-05-22",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    },
+                    {
+                        "name": "Cal Evans",
+                        "twitter": "@calevans"
+                    },
+                    {
+                        "name": "Keith Casey",
+                        "twitter": "@caseysoftware"
+                    },
+                    {
+                        "name": "Beth Tucker Long",
+                        "twitter": "@e3BethT"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2008",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2008-05-20",
+                "event_end": "2008-05-23",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2007",
+                "location": {
+                    "name": "Chicago, IL, USA"
+                },
+                "event_start": "2007-05-15",
+                "event_end": "2007-05-18",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    }
+                ]
+            },
+            {
+                "name": "php|tek 2006",
+                "location": {
+                    "name": "Orlando, FL, USA"
+                },
+                "event_start": "2006-04-25",
+                "event_end": "2006-04-28",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Marco Tabini",
+                        "twitter": "@mtabini"
+                    },
+                    {
+                        "name": "Arbi Arzoumani",
+                        "twitter": "@arzoum"
+                    }
+                ]
+            }
+        ],
+        "website": "https://tek.phparch.com/",
+        "twitter": "@phparch"
+    },
+    {
+        "key": "sunshinephp",
+        "name": "SunshinePHP",
+        "tags": ["php"],
+        "first_event": "2013-02-08",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "SunshinePHP 2017",
+                "location": {
+                    "name": "Miami, Florida"
+                },
+                "event_start": "2017-02-02",
+                "event_end": "2017-02-04",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Adam Culp",
+                        "twitter": "@adamculp"
+                    }
+                ]
+            },
+            {
+                "name": "SunshinePHP 2016",
+                "location": {
+                    "name": "Miami, Florida"
+                },
+                "event_start": "2016-02-04",
+                "event_end": "2016-02-06",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Adam Culp",
+                        "twitter": "@adamculp"
+                    }
+                ]
+            },
+            {
+                "name": "SunshinePHP 2015",
+                "location": {
+                    "name": "Miami, Florida"
+                },
+                "event_start": "2015-02-05",
+                "event_end": "2015-02-07",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Adam Culp",
+                        "twitter": "@adamculp"
+                    }
+                ]
+            },
+            {
+                "name": "SunshinePHP 2014",
+                "location": {
+                    "name": "Miami, Florida"
+                },
+                "event_start": "2014-02-06",
+                "event_end": "2014-02-08",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Adam Culp",
+                        "twitter": "@adamculp"
+                    }
+                ]
+            },
+            {
+                "name": "SunshinePHP 2013",
+                "location": {
+                    "name": "Miami, Florida"
+                },
+                "event_start": "2013-02-08",
+                "event_end": "2013-02-09",
+                "cfp_start": "",
+                "cfp_end": "",
+                "session_feed": "",
+                "speaker_feed": "",
+                "organizers": [
+                    {
+                        "name": "Adam Culp",
+                        "twitter": "@adamculp"
+                    }
+                ]
+            }
+        ],
+        "website": "http://sunshinephp.com",
+        "twitter": "@sunshinephp"
+    },
+    {
+        "key": "symfonycon",
+        "name": "SymfonyCon",
+        "tags": ["php", "symfony", "twig", "doctrine"],
+        "first_event": "2013-12-10",
+        "last_event": "",
+        "speaker_kit": {
+            "ticket_included": true,
+            "hotel_included": true,
+            "travel_included": true
+        },
+        "events": [
+            {
+                "name": "SymfonyCon Paris 2015",
+                "location": {
+                    "name": "Paris, France"
+                },
+                "event_start": "2015-12-03",
+                "event_end": "2015-12-05",
+                "cfp_start": "2015-04-24",
+                "cfp_end": "2015-06-30",
+                "session_feed": "http://pariscon2015.symfony.com/speakers",
+                "speaker_feed": "http://pariscon2015.symfony.com/speakers",
+                "organizers": [
+                    {
+                        "name": "SensioLabs",
+                        "twitter": "@sensiolabs"
+                    }
+                ]
+            },
+            {
+                "name": "SymfonyCon Madrid 2014",
+                "location": {
+                    "name": "Madrid, Spain"
+                },
+                "event_start": "2014-11-27",
+                "event_end": "2014-11-29",
+                "cfp_start": "2014-06-17",
+                "cfp_end": "2014-09-04",
+                "session_feed": "http://madrid2014.symfony.com/speakers",
+                "speaker_feed": "http://madrid2014.symfony.com/speakers",
+                "organizers": [
+                    {
+                        "name": "SensioLabs",
+                        "twitter": "@sensiolabs"
+                    }
+                ]
+            },
+            {
+                "name": "SymfonyCon Warsaw 2013",
+                "location": {
+                    "name": "Warsaw, Poland"
+                },
+                "event_start": "2013-12-12",
+                "event_end": "2013-12-14",
+                "cfp_start": "2013-06-11",
+                "cfp_end": "2013-07-31",
+                "session_feed": "http://warsaw2013.symfony.com/speakers",
+                "speaker_feed": "http://warsaw2013.symfony.com/speakers",
+                "organizers": [
+                    {
+                        "name": "SensioLabs",
+                        "twitter": "@sensiolabs"
+                    }
+                ]
+            }
+        ],
+        "website": "http://live.symfony.com",
+        "twitter": "@symfonycon"
+    },
+    {
+        "key": "waq",
+        "name": "Web à Québec",
+        "tags": ["web", "ux", "ui", "marketing"],
+        "first_event": "",
+        "last_event": "",
+        "events": [
+            {
+                "name": "Web à Québec 2012",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2012-02-22",
+                "event_end": "2012-02-24"
+            },
+            {
+                "name": "Web à Québec 2013",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2013-02-20",
+                "event_end": "2013-02-22"
+            },
+            {
+                "name": "Web à Québec 2014",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2014-03-19",
+                "event_end": "2014-03-21"
+            },
+            {
+                "name": "Web à Québec 2015",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2015-03-18",
+                "event_end": "2015-03-20"
+            },
+            {
+                "name": "Web à Québec 2016",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2016-04-06",
+                "event_end": "2016-04-08"
+            }
+        ],
+        "website": "http://webaquebec.org/",
+        "twitter": "@webaquebec"
+    },
+    {
+        "key": "hackfest",
+        "name": "Hackfest",
+        "tags": ["infosec", "security"],
+        "first_event": "2008",
+        "last_event": "",
+        "events": [
+            {
+                "name": "Hackfest 2015",
+                "location": {
+                    "name": "Quebec, QC, Canada"
+                },
+                "event_start": "2015-11-06",
+                "event_end": "2015-11-07"
+            }
+        ],
+        "website": "http://www.hackfest.ca",
+        "twitter": "@hackfest_ca"
+    }
+]

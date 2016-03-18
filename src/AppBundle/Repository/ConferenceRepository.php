@@ -1,0 +1,97 @@
+<?php
+namespace AppBundle\Repository;
+
+use Doctrine\ORM\QueryBuilder;
+use AppBundle\Entity as Entity;
+
+use ApiBundle\Repository\AbstractRepository;
+use ApiBundle\Repository\RepositoryInterface;
+use ApiBundle\Repository\ApiCriteria;
+use ApiBundle\Repository\ApiQuery;
+
+class ConferenceRepository extends AbstractRepository
+{
+    private $name = 'conference';
+
+    public function saveItem($item, $immediate = true)
+    {
+        $this->getEntityManager()->persist($item);
+        if ($immediate) {
+            $this->getEntityManager()->flush();
+        }
+        return $item;
+    }
+
+    public function deleteItem($item, $immediate = true)
+    {
+        throw new \Exception("Not allowed to delete {$this->name} through this API.");
+    }
+
+    public function findItem(ApiCriteria $criteria, $hydration = 2)
+    {
+        $query = $this
+            ->createQueryBuilder('root')
+            ->select('PARTIAL root.{id, key, name, website, twitter} AS item')
+            ->addSelect('event')
+            ->leftJoin('root.events', 'event')
+            ->addSelect('speaker_kit')
+            ->leftJoin('root.speaker_kit', 'speaker_kit')
+        ;
+        $apiQuery = new ApiQuery($this, $query, $criteria);
+
+        $result = $apiQuery->queryItem($hydration);
+        return $result;
+    }
+
+    public function findList(ApiCriteria $criteria, $hydration = 2)
+    {
+        $query = $this
+            ->createQueryBuilder('root')
+            ->select('PARTIAL root.{id, key, name, website, twitter} AS item')
+            ->addSelect('PARTIAL event.{id, location, event_start, event_end}')
+            ->leftJoin('root.events', 'event')
+        ;
+        $apiQuery = new ApiQuery($this, $query, $criteria);
+
+        $results = $apiQuery->queryList($hydration);
+        return $results;
+    }
+
+    public function findTagList(ApiCriteria $criteria, $hydration = 2)
+    {
+        $query = $this
+            ->createQueryBuilder('root')
+            ->select('PARTIAL root.{id, tags} AS item')
+        ;
+        $apiQuery = new ApiQuery($this, $query, $criteria);
+
+        $results = $apiQuery->queryList($hydration);
+        return $results;
+    }
+
+    public function addIdFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.id = :id');
+        $queryBuilder->setParameter('id', $value);
+    }
+
+    public function addKeyFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.key = :key');
+        $queryBuilder->setParameter('key', $value);
+    }
+
+    public function addTagFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        if ($value == 'all') {
+            return;
+        }
+        $queryBuilder->andWhere('root.tags LIKE :tag');
+        $queryBuilder->setParameter('tag', '%"'.$value.'"%');
+    }
+
+    public function transformArrayResult(ApiCriteria $criteria, &$item)
+    {
+        parent::transformArrayResult($criteria, $item);
+    }
+}

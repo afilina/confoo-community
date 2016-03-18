@@ -1,0 +1,6 @@
+services:
+    api.kernel_request_listener:
+        class: ApiBundle\Service\KernelListener
+        arguments: ['uploads']
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
