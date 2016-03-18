@@ -106,6 +106,11 @@ class ConferenceEventRepository extends AbstractRepository
         $queryBuilder->addOrderBy('root.event_start', $order == '-' ? 'ASC' : 'DESC');
     }
 
+    public function addCfpEndDateSort(QueryBuilder &$queryBuilder, $order)
+    {
+        $queryBuilder->addOrderBy('root.cfp_end', $order == '-' ? 'ASC' : 'DESC');
+    }
+
     public function transformArrayResult(ApiCriteria $criteria, &$item)
     {
         parent::transformArrayResult($criteria, $item);
