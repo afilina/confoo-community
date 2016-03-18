@@ -50,7 +50,7 @@ class ConferenceController extends Controller
             $pages[] = $i+1;
         }
 
-        return $this->render('AppBundle::conference/upcoming-list.html.twig', [
+        return $this->render('AppBundle::Conference/upcoming-list.html.twig', [
             'upcomingConfs' => $upcomingConfs['data'],
             'tags' => $tags,
             'tag' => $tag,
@@ -91,7 +91,7 @@ class ConferenceController extends Controller
             $pages[] = $i+1;
         }
 
-        return $this->render('AppBundle::conference/cfp-list.html.twig', [
+        return $this->render('AppBundle::Conference/cfp-list.html.twig', [
             'openCfps' => $openCfps['data'],
             'tags' => $tags,
             'tag' => $tag,
@@ -129,7 +129,7 @@ class ConferenceController extends Controller
             $pages[] = $i+1;
         }
 
-        return $this->render('AppBundle::conference/conferences-list.html.twig', [
+        return $this->render('AppBundle::Conference/conferences-list.html.twig', [
             'allConfs' => $allConfs['data'],
             'tags' => $tags,
             'tag' => $tag,
