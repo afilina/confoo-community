@@ -1,0 +1,26 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <div class="alert alert-success" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+
+            {{ form_start(alertForm) }}
+            {{ form_widget(alertForm) }}
+            {{ form_rest(alertForm) }}
+            {{ form_end(alertForm) }}
+        </div>
+
+    </div>
+
+{% endblock %}

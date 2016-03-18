@@ -5,12 +5,10 @@
 
 {% block body %}
 
-    <form class="form-inline">
-        <a href="/upcoming/t/all" class="label label-default conf-tag">All tags</a>
-        {% for tag in tags %}
-            <a href="/upcoming/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
-        {% endfor %}
-    </form>
+    <a href="/upcoming/t/all" class="label label-default conf-tag">All tags</a>
+    {% for tag in tags %}
+        <a href="/upcoming/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+    {% endfor %}
 
     <h2>Upcoming Conferences</h2>
     <p>Conferences starting in the next month.</p>

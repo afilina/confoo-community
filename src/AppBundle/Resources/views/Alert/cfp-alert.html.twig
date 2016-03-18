@@ -1,0 +1,11 @@
+{% for item in newCfps %}
+<div style="border-bottom: 1px dashed #ccc; padding: 12px 0;">
+    <span style="font-size: 1.5em;">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
+    Location: {{ item.location.name }}<br>
+    CfP closes: {{ item.cfp_end|date("M j") }}<br>
+    <div>
+        <a href="{{ item.conference.website }}">[Website]</a> 
+        <a href="https://twitter.com/{{ item.conference.twitter }}">[Twitter]</a>
+    </div>
+</div>
+{% endfor %}

@@ -80,6 +80,18 @@ class ConferenceEventRepository extends AbstractRepository
         $queryBuilder->setParameter('cfp_end', $value);
     }
 
+    public function addCfpStartMinFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.cfp_start >= :cfp_start_min');
+        $queryBuilder->setParameter('cfp_start_min', $value);
+    }
+
+    public function addCfpStartMaxFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.cfp_start <= :cfp_start_max');
+        $queryBuilder->setParameter('cfp_start_max', $value);
+    }
+
     public function addEventStartMinFilter(QueryBuilder &$queryBuilder, $value)
     {
         $queryBuilder->andWhere('root.event_start >= :event_start_min');

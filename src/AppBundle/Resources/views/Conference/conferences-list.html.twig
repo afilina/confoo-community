@@ -5,12 +5,10 @@
 
 {% block body %}
 
-    <form class="form-inline">
-        <a href="/conferences/t/all" class="label label-default conf-tag">All tags</a>
-        {% for tag in tags %}
-            <a href="/conferences/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
-        {% endfor %}
-    </form>
+    <a href="/conferences/t/all" class="label label-default conf-tag">All tags</a>
+    {% for tag in tags %}
+        <a href="/conferences/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+    {% endfor %}
 
     <h2>All Conferences</h2>
     <div class="well">

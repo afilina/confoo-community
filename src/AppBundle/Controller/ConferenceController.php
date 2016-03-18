@@ -92,12 +92,19 @@ class ConferenceController extends Controller
             $pages[] = $i+1;
         }
 
+        $alert = new \AppBundle\Entity\CfpAlert();
+        $alert->tag = $tag;
+        $alertForm = $this->createForm(\AppBundle\Form\AlertType::class, $alert, [
+            'action' => $this->generateUrl('alert_cfp_subscribe'),
+        ]);
+
         return $this->render('AppBundle::Conference/cfp-list.html.twig', [
             'openCfps' => $openCfps['data'],
             'tags' => $tags,
             'tag' => $tag,
             'pages' => $pages,
             'page' => $page,
+            'alertForm' => $alertForm->createView(),
         ]);
     }
 

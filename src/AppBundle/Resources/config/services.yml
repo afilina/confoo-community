@@ -4,3 +4,9 @@ services:
         arguments: ['uploads']
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    app.mailer:
+        class: AppBundle\Adapter\Mailer\Mandrill\MandrillMailer
+        arguments: ['@logger', '%mailer_api_key%', '%mailer_disable_delivery%']
+        tags:
+            - { name: monolog.logger, handler: mailer }

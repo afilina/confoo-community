@@ -5,41 +5,52 @@
 
 {% block body %}
 
-    <form class="form-inline">
-        <a href="/cfp/t/all" class="label label-default conf-tag">All tags</a>
-        {% for tag in tags %}
-            <a href="/cfp/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
-        {% endfor %}
-    </form>
+    <a href="/cfp/t/all" class="label label-default conf-tag">All tags</a>
+    {% for tag in tags %}
+        <a href="/cfp/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+    {% endfor %}
 
     <h2>Calling for Papers</h2>
     <p>Conferences with currently open call for papers.</p>
-    <div class="well">
-    {% for item in openCfps %}
-        <div class="item-box">
-            <span class="conf-name">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
-            Location: {{ item.location.name }}<br>
-            CfP closes: {{ item.cfp_end|date("M j") }}<br>
-            <div class="btn-group" role="group">
-                <a href="{{ item.conference.website }}" class="btn btn-default">
-                    <i class="fa fa-globe"></i>
-                    Website
-                </a>
-                <a href="https://twitter.com/{{ item.conference.twitter }}" class="btn btn-default">
-                    <i class="fa fa-twitter"></i>
-                    Twitter
-                </a>
-            </div>
-        </div>
-    {% endfor %}
 
-    <p>
-        <div class="btn-group" role="group">
-        {% for p in pages %}
-            <a href="/cfp/t/{{ tag }}/{{ p }}" class="btn btn-default {{ p == page ? 'active' }}">{{ p }}</a>
+    <div class="row">
+
+        <div class="col-md-9 well">
+        {% for item in openCfps %}
+            <div class="item-box">
+                <span class="conf-name">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
+                Location: {{ item.location.name }}<br>
+                CfP closes: {{ item.cfp_end|date("M j") }}<br>
+                <div class="btn-group" role="group">
+                    <a href="{{ item.conference.website }}" class="btn btn-default">
+                        <i class="fa fa-globe"></i>
+                        Website
+                    </a>
+                    <a href="https://twitter.com/{{ item.conference.twitter }}" class="btn btn-default">
+                        <i class="fa fa-twitter"></i>
+                        Twitter
+                    </a>
+                </div>
+            </div>
         {% endfor %}
+
+        <p>
+            <div class="btn-group" role="group">
+            {% for p in pages %}
+                <a href="/cfp/t/{{ tag }}/{{ p }}" class="btn btn-default {{ p == page ? 'active' }}">{{ p }}</a>
+            {% endfor %}
+            </div>
+        </p>
         </div>
-    </p>
+
+        <div class="col-md-3">
+            <p>Want to be notified of a new CfP?</p>
+            {{ form_start(alertForm) }}
+            {{ form_widget(alertForm) }}
+            {{ form_rest(alertForm) }}
+            {{ form_end(alertForm) }}
+        </div>
+
     </div>
 
 {% endblock %}

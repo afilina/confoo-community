@@ -63,7 +63,10 @@ class KernelListener
             $apiInput = new ApiInput();
             try {
                 $apiInput->files = $event->getRequest()->files->all();
-                $apiInput->jsonBody = $event->getRequest()->getContent();
+                if ($event->getRequest()->getContentType() == 'form') {
+                } else {
+                    $apiInput->jsonBody = $event->getRequest()->getContent();
+                }
             } catch (\Exception $e) {
                 if (count($apiInput->files) == 0) {
                     $response = new Response('{"message":"'.$e->getMessage().'", "code":1000}', 400);
