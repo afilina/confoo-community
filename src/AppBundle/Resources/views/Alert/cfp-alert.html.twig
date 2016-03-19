@@ -1,3 +1,7 @@
+<p>Hi,</p>
+
+<p>Here is your Call for Papers digest for {{ tag }} conferences.</p>
+
 {% for item in newCfps %}
 <div style="border-bottom: 1px dashed #ccc; padding: 12px 0;">
     <span style="font-size: 1.5em;">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
@@ -9,3 +13,12 @@
     </div>
 </div>
 {% endfor %}
+
+<p>Please don't forget to contribute to the <a href="https://github.com/afilina/dev-community-data">open conference data</a>.</p>
+
+<p>
+Cheers!<br/>
+The ConFoo team<br/>
+<a href="https://confoo.ca">https://confoo.ca</a><br/>
+<a href="mailto:board@confoo.ca">board@confoo.ca</a>
+</p>

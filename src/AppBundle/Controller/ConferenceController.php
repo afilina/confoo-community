@@ -36,14 +36,7 @@ class ConferenceController extends Controller
         $upcomingConfs = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
 
         $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
-        $confRepo = $confRepo->findTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
-
-        $tags = [];
-        foreach ($confRepo['data'] as $conf) {
-            $tags = array_merge($tags, $conf['tags']);
-        }
-        $tags = array_unique($tags);
-        sort($tags);
+        $tags = $confRepo->getTagList();
 
         $pages = [];
         for ($i=0; $i < $upcomingConfs['meta']['pages']; $i++) { 
@@ -78,14 +71,7 @@ class ConferenceController extends Controller
         $openCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
 
         $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
-        $confRepo = $confRepo->findTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
-
-        $tags = [];
-        foreach ($confRepo['data'] as $conf) {
-            $tags = array_merge($tags, $conf['tags']);
-        }
-        $tags = array_unique($tags);
-        sort($tags);
+        $tags = $confRepo->getTagList();
 
         $pages = [];
         for ($i=0; $i < $openCfps['meta']['pages']; $i++) { 
@@ -96,6 +82,7 @@ class ConferenceController extends Controller
         $alert->tag = $tag;
         $alertForm = $this->createForm(\AppBundle\Form\AlertType::class, $alert, [
             'action' => $this->generateUrl('alert_cfp_subscribe'),
+            'tags' => $tags,
         ]);
 
         return $this->render('AppBundle::Conference/cfp-list.html.twig', [
@@ -123,14 +110,7 @@ class ConferenceController extends Controller
 
         $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
         $allConfs = $confRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
-        $confTags = $confRepo->findTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
-
-        $tags = [];
-        foreach ($confTags['data'] as $conf) {
-            $tags = array_merge($tags, $conf['tags']);
-        }
-        $tags = array_unique($tags);
-        sort($tags);
+        $tags = $confRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
 
         $pages = [];
         for ($i=0; $i < $allConfs['meta']['pages']; $i++) { 

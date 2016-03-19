@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use AppBundle\Adapter\Mailer as Mailer;
+
 class AlertController extends Controller
 {
     /**
@@ -16,9 +18,13 @@ class AlertController extends Controller
      */
     public function cfpSubscribeAction(Request $request)
     {
+        $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
+        $tags = $confRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
+
         $alert = new \AppBundle\Entity\CfpAlert();
         $alertForm = $this->createForm(\AppBundle\Form\AlertType::class, $alert, [
             'action' => $this->generateUrl('alert_cfp_subscribe'),
+            'tags' => $tags,
         ]);
 
         $alertForm->handleRequest($request);
@@ -44,9 +50,30 @@ class AlertController extends Controller
             $em->persist($alert);
             $em->flush();
 
+            try {
+                $mailer = $this->container->get('app.mailer');
+                $mailer->setOption('subaccount', 'community.confoo.ca');
+                $message = new Mailer\Message();
+                $message->subject = 'Call for Papers Subscription';
+                $message->from = new Mailer\Email();
+                $message->from->address = 'no-reply@confoo.ca';
+                $message->from->name = 'ConFoo Community';
+                $to = new Mailer\Email();
+                $to->address = $alert->email;
+                $message->to = [$to];
+                $html = $this->container->get('templating')->render('AppBundle::Alert/cfp-alert-welcome.html.twig', [
+                    'frequency' => $alert->frequency,
+                    'tag' => $alert->tag,
+                ]);
+                $message->html = $html;
+
+                $delivery = $mailer->executeSend($message);
+            } catch (\Exception $e) {
+            }
+
             $this->addFlash(
                 'success',
-                'Check your inbox! You should have received your first Call for Papers alert.'
+                'Great! You just subscribed to the Call for Papers.'
             );
 
             return $this->redirectToRoute('alert_cfp_subscribe');

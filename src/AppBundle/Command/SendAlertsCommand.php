@@ -79,13 +79,21 @@ class SendAlertsCommand extends ContainerAwareCommand
                 
                 $eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
                 $newCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
+                if (count($newCfps['data']) == 0) {
+                    continue;
+                }
 
                 $html = $this->getContainer()->get('templating')->render('AppBundle::Alert/cfp-alert.html.twig', [
+                    'frequency' => $alert->frequency,
+                    'tag' => $alert->tag,
                     'newCfps' => $newCfps['data'],
                 ]);
                 $message->html = $html;
 
-                $delivery = $this->mailer->executeSend($message);
+                try {
+                    $delivery = $this->mailer->executeSend($message);
+                } catch (\Exception $e) {
+                }
 
                 $alert->last_alert_date = new \DateTime();
                 $em->persist($alert);

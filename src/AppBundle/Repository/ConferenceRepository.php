@@ -2,6 +2,8 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\QueryBuilder;
+use Doctrine\ORM\AbstractQuery;
+
 use AppBundle\Entity as Entity;
 
 use ApiBundle\Repository\AbstractRepository;
@@ -67,6 +69,18 @@ class ConferenceRepository extends AbstractRepository
 
         $results = $apiQuery->queryList($hydration);
         return $results;
+    }
+
+    public function getTagList()
+    {
+        $tagList = $this->findTagList(new ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
+        $tags = [];
+        foreach ($tagList['data'] as $conf) {
+            $tags = array_merge($tags, $conf['tags']);
+        }
+        $tags = array_unique($tags);
+        sort($tags);
+        return $tags;
     }
 
     public function addIdFilter(QueryBuilder &$queryBuilder, $value)
