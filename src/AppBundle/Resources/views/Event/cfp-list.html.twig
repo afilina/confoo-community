@@ -5,7 +5,7 @@
 
 {% block body %}
 
-    <a href="/cfp/t/all" class="label label-default conf-tag">All tags</a>
+    <a href="/cfp/t/all" class="label label-default conf-tag">all tags</a>
     {% for tag in tags %}
         <a href="/cfp/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
     {% endfor %}
@@ -27,19 +27,7 @@
             <div class="well">
             {% for item in openCfps %}
                 <div class="item-box">
-                    <span class="conf-name">{{ item.conference.name }}</span> ({{ item.event_start|date("M j") }} - {{ item.event_end|date("M j") }})<br>
-                    Location: {{ item.location.name }}<br>
-                    CfP closes: {{ item.cfp_end|date("M j") }}<br>
-                    <div class="btn-group" role="group">
-                        <a href="{{ item.conference.website }}" class="btn btn-default">
-                            <i class="fa fa-globe"></i>
-                            Website
-                        </a>
-                        <a href="https://twitter.com/{{ item.conference.twitter }}" class="btn btn-default">
-                            <i class="fa fa-twitter"></i>
-                            Twitter
-                        </a>
-                    </div>
+                    {% include 'AppBundle::Event/item-block.html.twig' with {'event': item} only %}
                 </div>
             {% endfor %}
 

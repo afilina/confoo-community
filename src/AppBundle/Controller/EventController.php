@@ -113,4 +113,47 @@ class EventController extends Controller
             'queryString' => $request->getQueryString(),
         ]);
     }
+
+    /**
+     * @Route("/cfp/t/{tag}/{page}", name="cfp_list", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
+     */
+    public function cfpListAction(Request $request)
+    {
+        $tag = $request->attributes->get('tag');
+        $page = $request->attributes->get('page');
+
+        $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
+            'cfpStart' => new \DateTime(),
+            'cfpEnd' => new \DateTime(),
+        ]); // Currently open
+        $apiCriteria->addSystemFilter('tag', $tag);
+        $apiCriteria->sorting = 'cfpEndDate';
+        $apiCriteria->pageNumber = $page;
+        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+        $openCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT);
+
+        $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
+        $tags = $confRepo->getTagList();
+
+        $pages = [];
+        for ($i=0; $i < $openCfps['meta']['pages']; $i++) { 
+            $pages[] = $i+1;
+        }
+
+        $alert = new \AppBundle\Entity\CfpAlert();
+        $alert->tag = $tag;
+        $alertForm = $this->createForm(\AppBundle\Form\AlertType::class, $alert, [
+            'action' => $this->generateUrl('alert_cfp_subscribe'),
+            'tags' => $tags,
+        ]);
+
+        return $this->render('AppBundle::Event/cfp-list.html.twig', [
+            'openCfps' => $openCfps['data'],
+            'tags' => $tags,
+            'tag' => $tag,
+            'pages' => $pages,
+            'page' => $page,
+            'alertForm' => $alertForm->createView(),
+        ]);
+    }
 }

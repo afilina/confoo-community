@@ -26,6 +26,11 @@
         <p>
             Call for papers: 
             <span class="cfp-status label {{ cfpStatusLabels[cfpStatus.key] }}">{{ cfpStatus.name }}</span>
+            {% if cfpStatus.key == 'open' %}
+                (ends {{ event.cfp_end|date("M j") }})
+            {% elseif cfpStatus.key == 'upcoming' %}
+                (opens {{ event.cfp_start|date("M j") }})
+            {% endif %}
         </p>
 
     </div>
