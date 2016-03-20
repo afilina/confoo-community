@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 class ConferenceController extends Controller
 {
     /**
-     * @Route("/{page}", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
      * @Route("/upcoming/t/{tag}/{page}", name="upcoming_list", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
      */
     public function upcomingListAction(Request $request)

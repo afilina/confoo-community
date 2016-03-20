@@ -13,6 +13,7 @@ use GuzzleHttp\Client;
 class EventController extends Controller
 {
     /**
+     * @Route("/{page}", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
      * @Route("/events/t/{tag}/{page}", name="events_list", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
      */
     public function listAction(Request $request)
@@ -53,6 +54,7 @@ class EventController extends Controller
 
                 if (empty($searchData['radius'])) {
                     $searchData['radius'] = 25;
+                    $searchForm->get('radius')->addError(new \Symfony\Component\Form\FormError('Using default radius of 25 km.'));
                 }
 
                 $api_key = $this->container->getParameter('google_api_key');
@@ -76,16 +78,19 @@ class EventController extends Controller
                 // }
                 // ';
                 $json = json_decode($body, true);
-                $data = $json['results'][0];
 
-                $apiCriteria->addUserFilter('nearLocation', [
-                    'latitude' => $data['geometry']['location']['lat'],
-                    'longitude' => $data['geometry']['location']['lng'],
-                    'radius' => $searchData['radius'],
-                    'unit' => 'km',
-                ]);
+                if (count($json['results']) > 0) {
 
-                // TODO: handle invalid location
+                    $data = $json['results'][0];
+                    $apiCriteria->addUserFilter('nearLocation', [
+                        'latitude' => $data['geometry']['location']['lat'],
+                        'longitude' => $data['geometry']['location']['lng'],
+                        'radius' => $searchData['radius'],
+                        'unit' => 'km',
+                    ]);
+                } else {
+                    $searchForm->get('location')->addError(new \Symfony\Component\Form\FormError('Couldn\'t find location. Ignoring this filter.'));
+                }
             }
         }
 
