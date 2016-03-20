@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Doctrine\ORM\AbstractQuery;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,6 +16,7 @@ class EventController extends Controller
     /**
      * @Route("/{page}", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
      * @Route("/events/t/{tag}/{page}", name="events_list", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
+     * @Cache(expires="+1 minutes", public=true)
      */
     public function listAction(Request $request)
     {
@@ -116,6 +118,7 @@ class EventController extends Controller
 
     /**
      * @Route("/cfp/t/{tag}/{page}", name="cfp_list", defaults={"page": 1, "tag": "all"}, requirements={"page": "\d+"})
+     * @Cache(expires="+1 minutes", public=true)
      */
     public function cfpListAction(Request $request)
     {
