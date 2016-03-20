@@ -90,8 +90,10 @@ class Conference
             }
             $conferenceEvent->replaceWithArray($event);
         }
+        $this->speaker_kit->is_unknown = true;
         if (!empty($array['speaker_kit'])) {
             $this->speaker_kit->replaceWithArray($array['speaker_kit']);
+            $this->speaker_kit->is_unknown = false;
         }
         $this->website = $array['website'];
         if (!empty($array['twitter'])) {

@@ -34,6 +34,11 @@ class SpeakerKit
     protected $travel_included = false;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $is_unknown = true;
+
+    /**
      * @ORM\OneToOne(targetEntity="Conference", inversedBy="speaker_kit")
      **/
     protected $conference;
@@ -48,6 +53,27 @@ class SpeakerKit
         }
         if (isset($array['travel_included'])) {
             $this->travel_included = $array['travel_included'];
-        }        
+        }
+    }
+
+    public function getIncluded()
+    {
+        $names = [];
+        $names_dict = [
+            'ticket_included' => 'Conference ticket',
+            'hotel_included' => 'Lodging',
+            'travel_included' => 'Travel',
+        ];
+        if ($this->is_unknown) {
+            $names = ['Unknown'];
+            return $names;
+        }
+        foreach ($names_dict as $key => $name) {
+            $value = $this->{$key};
+            if ($value === true) {
+                $names[] = $names_dict[$key];
+            }
+        }
+        return $names;
     }
 }

@@ -31,6 +31,8 @@
             {% elseif cfpStatus.key == 'upcoming' %}
                 (opens {{ event.cfp_start|date("M j") }})
             {% endif %}
+            <br>
+            Speaker kit includes: {{ event.conference.speaker_kit.getIncluded()|join(', ') }}
         </p>
 
     </div>
