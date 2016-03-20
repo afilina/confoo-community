@@ -1,0 +1,40 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ event.name }}</h1>
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="well">
+                {% include 'AppBundle::Event/item-block.html.twig' with {'event': event, 'excludeName': true} only %}
+            </div>
+        </div>
+
+    </div>
+
+    <p>Coming soon on this page: list of speakers and sessions.</p>
+
+{#     <h2>All {{ event.conference.name }} events</h2>
+
+    <div class="well">
+        {% for item in events %}
+            <div class="item-box">
+                {% include 'AppBundle::Event/item-block.html.twig' with {'event': item, 'excludeLinks': true} only %}
+            </div>
+        {% endfor %} #}
+
+{#         <p>
+            <div class="btn-group" role="group">
+            {% for p in pages %}
+                <a href="{{ path('events_list', {'page': p}) }}?{{ queryString }}" class="btn btn-default {{ p == page ? 'active' }}">{{ p }}</a>
+            {% endfor %}
+            </div>
+        </p> #}
+    {# </div> #}
+
+{% endblock %}

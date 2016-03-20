@@ -116,6 +116,11 @@ class ConferenceEvent
         }
     }
 
+    public function hasEnded()
+    {
+        return $this->event_end->getTimestamp() < time();
+    }
+
     public function replaceWithArray(array $array)
     {
         $this->name = $array['name'];

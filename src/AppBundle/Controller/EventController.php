@@ -31,7 +31,7 @@ class EventController extends Controller
             'eventEndMin' => new \DateTime(), // skip past events
         ]);
         $apiCriteria->pageNumber = $page;
-        $apiCriteria->sorting = 'startDate';
+        $apiCriteria->sorting = 'eventStart';
 
         // Search form
         $searchForm = $this->createForm(\AppBundle\Form\EventSearchType::class, null, [
@@ -157,6 +157,37 @@ class EventController extends Controller
             'pages' => $pages,
             'page' => $page,
             'alertForm' => $alertForm->createView(),
+        ]);
+    }
+
+    
+    /**
+     * @Route("/events/v/{id}", name="events_view", requirements={"id": "\d+"})
+     * @Cache(expires="+1 minutes", public=true)
+     */
+    public function viewAction(Request $request)
+    {
+        $id = $request->attributes->get('id');
+        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+
+        $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
+            'id' => $id,
+        ]);
+        $event = $eventRepo->findItem($apiCriteria, AbstractQuery::HYDRATE_OBJECT)['data'];
+
+        if (!$event) {
+            throw $this->createNotFoundException('The event does not exist');
+        }
+
+        // $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
+        //     'conference' => $event->conference->id,
+        // ]);
+        // $apiCriteria->sorting = '-eventStart';
+        // $events = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT)['data'];
+
+        return $this->render('AppBundle::Event/event-view.html.twig', [
+            'event' => $event,
+            // 'events' => $events,
         ]);
     }
 }

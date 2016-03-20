@@ -2,10 +2,18 @@
 
     <div class="col-md-6">
 
-        <span class="conf-name">{{ event.conference.name }}</span><br>
+        {% if excludeName is not defined or excludeName == false %}
+            <span class="conf-name">
+                <a href="{{ path('events_view', {'id': event.id}) }}">{{ event.name }}</a>
+            </span>
+            {% if event.hasEnded() %}<span class="label label-danger">Ended</span>{% endif %}
+            <br>
+        {% endif %}
+
         {{ event.event_start|date("M j Y") }} - {{ event.event_end|date("M j Y") }}<br>
         Location: {{ event.location.name }}<br>
 
+        {% if excludeLinks is not defined or excludeLinks == false %}
         <p><div class="btn-group" role="group">
             <a href="{{ event.conference.website }}" class="btn btn-default">
                 <i class="fa fa-globe"></i>
@@ -16,6 +24,7 @@
                 Twitter
             </a>
         </div></p>
+        {% endif %}
 
     </div>
 

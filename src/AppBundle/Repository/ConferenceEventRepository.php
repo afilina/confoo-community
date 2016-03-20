@@ -31,7 +31,7 @@ class ConferenceEventRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, name, cfp_start, cfp_end, event_start, event_end} AS item')
+            ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
             ->addSelect('PARTIAL conf.{id, name, website, twitter, tags}')
             ->innerJoin('root.conference', 'conf')
         ;
@@ -66,6 +66,12 @@ class ConferenceEventRepository extends AbstractRepository
     {
         $queryBuilder->andWhere('root.id = :id');
         $queryBuilder->setParameter('id', $value);
+    }
+
+    public function addConferenceFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.conference = :conf_id');
+        $queryBuilder->setParameter('conf_id', $value);
     }
 
     public function addCfpStartFilter(QueryBuilder &$queryBuilder, $value)
@@ -189,7 +195,7 @@ class ConferenceEventRepository extends AbstractRepository
         $queryBuilder->setParameter('tag', '%"'.$value.'"%');
     }
 
-    public function addStartDateSort(QueryBuilder &$queryBuilder, $order)
+    public function addEventStartSort(QueryBuilder &$queryBuilder, $order)
     {
         $queryBuilder->addOrderBy('root.event_start', $order == '-' ? 'DESC' : 'ASC');
     }

@@ -75,7 +75,7 @@ class SendAlertsCommand extends ContainerAwareCommand
                 ]);
                 $apiCriteria->addSystemFilter('tag', $alert->tag);
                 $apiCriteria->allowIgnorePagination = true;
-                $apiCriteria->sorting = 'startDate';
+                $apiCriteria->sorting = 'eventStart';
                 
                 $eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
                 $newCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
