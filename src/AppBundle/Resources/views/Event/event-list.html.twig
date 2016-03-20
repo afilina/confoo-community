@@ -1,0 +1,45 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <a href="/events/t/all" class="label label-default conf-tag">All tags</a>
+    {% for tag in tags %}
+        <a href="/events/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+    {% endfor %}
+
+    <h2>Conference Search</h2>
+
+    <div class="row">
+
+        <div class="col-md-3 col-md-push-9">
+            <p>Advanced search</p>
+            {{ form_start(searchForm) }}
+            {{ form_widget(searchForm) }}
+            {{ form_rest(searchForm) }}
+            {{ form_end(searchForm) }}
+        </div>
+
+        <div class="col-md-9 col-md-pull-3">
+            <div class="well">
+            {% for item in events %}
+                <div class="item-box">
+                    {% include 'AppBundle::Event/item-block.html.twig' with {'event': item} only %}
+                </div>
+            {% endfor %}
+
+            <p>
+                <div class="btn-group" role="group">
+                {% for p in pages %}
+                    <a href="{{ path('events_list', {'page': p}) }}?{{ queryString }}" class="btn btn-default {{ p == page ? 'active' }}">{{ p }}</a>
+                {% endfor %}
+                </div>
+            </p>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

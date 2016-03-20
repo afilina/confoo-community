@@ -1,0 +1,42 @@
+{% set lastEvent = conference.events|last %}
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <span class="conf-name">{{ conference.name }}</span><br>
+        Latest event: {{ lastEvent.event_start|date("M j Y") }} - {{ lastEvent.event_end|date("M j Y") }}<br>
+        Latest location: {{ lastEvent.location.name }}<br>
+
+        <p><div class="btn-group" role="group">
+            <a href="{{ conference.website }}" class="btn btn-default">
+                <i class="fa fa-globe"></i>
+                Website
+            </a>
+            <a href="https://twitter.com/{{ conference.twitter }}" class="btn btn-default">
+                <i class="fa fa-twitter"></i>
+                Twitter
+            </a>
+        </div></p>
+
+    </div>
+
+    <div class="col-md-6">
+
+        {% set cfpStatus = lastEvent.getCfpStatus() %}
+        {% set cfpStatusLabels = {'upcoming': 'label-warning', 'open': 'label-success', 'closed': 'label-danger'} %}
+        <p>
+            Call for papers: 
+            <span class="cfp-status label {{ cfpStatusLabels[cfpStatus.key] }}">{{ cfpStatus.name }}</span>
+        </p>
+
+{#         <p>
+            Conference tags:<br>
+            {% for tag in conference.tags %}
+                <a href="/conferences/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+            {% endfor %}
+        </p> #}
+
+    </div>
+
+</div>

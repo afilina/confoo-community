@@ -83,6 +83,29 @@ class ConferenceEvent
      */
     protected $organizers = [];
 
+    public function getCfpStatus()
+    {
+        $now = time();
+        if ($this->cfp_end == null || $this->cfp_end->getTimestamp() < $now) {
+            return [
+                'name' => 'Closed',
+                'key' => 'closed',
+            ];
+        }
+        if ($this->cfp_start->getTimestamp() <= $now && $this->cfp_end->getTimestamp() >= $now) {
+            return [
+                'name' => 'Open',
+                'key' => 'open',
+            ];
+        }
+        if ($this->cfp_start->getTimestamp() > $now) {
+            return [
+                'name' => 'Not open yet',
+                'key' => 'upcoming',
+            ];
+        }
+    }
+
     public function replaceWithArray(array $array)
     {
         $this->name = $array['name'];

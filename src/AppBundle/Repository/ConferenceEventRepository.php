@@ -104,6 +104,42 @@ class ConferenceEventRepository extends AbstractRepository
         $queryBuilder->setParameter('event_start_max', $value);
     }
 
+    public function addEventEndMinFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.event_end <= :event_end_min');
+        $queryBuilder->setParameter('event_end_min', $value);
+    }
+
+    public function addEventEndMaxFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.event_end >= :event_end_max');
+        $queryBuilder->setParameter('event_end_max', $value);
+    }
+
+    public function addCfpStatusFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $now = new \DateTime();
+        if ($value == 'closed') {
+            $queryBuilder->andWhere($queryBuilder->expr()->orX(
+                $queryBuilder->expr()->isNull('root.cfp_end'),
+                $queryBuilder->expr()->lt('root.cfp_end', ':now')
+            ));
+            $queryBuilder->setParameter('now', $now);
+            return;
+        }
+        if ($value == 'open') {
+            $queryBuilder->andWhere('root.cfp_start <= :now');
+            $queryBuilder->andWhere('root.cfp_end >= :now');
+            $queryBuilder->setParameter('now', $now);
+            return;
+        }
+        if ($value == 'upcoming') {
+            $queryBuilder->andWhere('root.cfp_start > :now');
+            $queryBuilder->setParameter('now', $now);
+            return;
+        }
+    }
+
     public function addTagFilter(QueryBuilder &$queryBuilder, $value)
     {
         if ($value == 'all') {
@@ -115,7 +151,7 @@ class ConferenceEventRepository extends AbstractRepository
 
     public function addStartDateSort(QueryBuilder &$queryBuilder, $order)
     {
-        $queryBuilder->addOrderBy('root.event_start', $order == '-' ? 'ASC' : 'DESC');
+        $queryBuilder->addOrderBy('root.event_start', $order == '-' ? 'DESC' : 'ASC');
     }
 
     public function addCfpEndDateSort(QueryBuilder &$queryBuilder, $order)

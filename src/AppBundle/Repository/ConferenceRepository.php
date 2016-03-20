@@ -49,8 +49,8 @@ class ConferenceRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, key, name, website, twitter} AS item')
-            ->addSelect('PARTIAL event.{id, location, event_start, event_end}')
+            ->select('PARTIAL root.{id, key, name, website, twitter, tags} AS item')
+            ->addSelect('PARTIAL event.{id, location, event_start, event_end, cfp_start, cfp_end}')
             ->leftJoin('root.events', 'event')
         ;
         $apiQuery = new ApiQuery($this, $query, $criteria);
