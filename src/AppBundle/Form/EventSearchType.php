@@ -14,7 +14,7 @@ class EventSearchType extends AbstractType
     {
         $builder
             ->add('min_date', Type\DateType::class, [
-                'label' => 'Starts after',
+                'label' => 'Starts after (yyyy-mm-dd)',
                 'html5' => true,
                 'widget' => 'single_text',
                 'required' => false,
