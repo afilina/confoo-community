@@ -127,7 +127,7 @@ class EventController extends Controller
             'cfpEnd' => new \DateTime(),
         ]); // Currently open
         $apiCriteria->addSystemFilter('tag', $tag);
-        $apiCriteria->sorting = 'cfpEndDate';
+        $apiCriteria->sorting = '-cfpEndDate';
         $apiCriteria->pageNumber = $page;
         $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
         $openCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT);
