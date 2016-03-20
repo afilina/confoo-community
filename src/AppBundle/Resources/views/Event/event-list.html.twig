@@ -5,9 +5,9 @@
 
 {% block body %}
 
-    <a href="/events/t/all" class="label label-default conf-tag">All tags</a>
+    <a href="{{ path('events_list', {'page': 1, 'tag': 'all'}) }}?{{ queryString }}" class="label label-default conf-tag">All tags</a>
     {% for tag in tags %}
-        <a href="/events/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
+        <a href="{{ path('events_list', {'page': 1, 'tag': tag}) }}?{{ queryString }}" class="label label-default conf-tag">{{ tag }}</a>
     {% endfor %}
 
     <h2>Conference Search</h2>

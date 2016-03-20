@@ -52,6 +52,7 @@ class ApiQuery
         ;
         $this->repository->addFilterJoins($queryBuilder);
         $this->addFilterCriteria($queryBuilder);
+        // var_dump($queryBuilder->getQuery()->getSql(), $queryBuilder->getQuery()->getParameters());exit;
         $count = count($queryBuilder->getQuery()->getResult(AbstractQuery::HYDRATE_ARRAY));
 
         if ($count == 0) {

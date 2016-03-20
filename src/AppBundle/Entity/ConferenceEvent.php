@@ -83,6 +83,16 @@ class ConferenceEvent
      */
     protected $organizers = [];
 
+    /**
+     * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true)
+     */
+    protected $latitude = null;
+
+    /**
+     * @ORM\Column(type="decimal", precision=9, scale=6, nullable=true)
+     */
+    protected $longitude = null;
+
     public function getCfpStatus()
     {
         $now = time();

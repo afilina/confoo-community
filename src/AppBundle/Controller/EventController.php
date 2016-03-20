@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use GuzzleHttp\Client;
+
 class EventController extends Controller
 {
     /**
@@ -23,7 +25,7 @@ class EventController extends Controller
 
         $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
             'tag' => $tag,
-            'eventEndMax' => new \DateTime(), // skip past events
+            'eventEndMin' => new \DateTime(), // skip past events
         ]);
         $apiCriteria->pageNumber = $page;
         $apiCriteria->sorting = 'startDate';
@@ -38,7 +40,53 @@ class EventController extends Controller
         $searchForm->handleRequest($request);
         if ($searchForm->isValid()) {
             $searchData = $searchForm->getData();
-            $apiCriteria->addUserFilter('cfpStatus', $searchData['cfp_status']);
+            if (!empty($searchData['min_date'])) {
+                $apiCriteria->addUserFilter('eventStartMin', $searchData['min_date']);
+            }
+            if (!empty($searchData['max_date'])) {
+                $apiCriteria->addUserFilter('eventEndMax', $searchData['max_date']);
+            }
+            if (!empty($searchData['cfp_status'])) {
+                $apiCriteria->addUserFilter('cfpStatus', $searchData['cfp_status']);
+            }
+            if (!empty($searchData['location'])) {
+
+                if (empty($searchData['radius'])) {
+                    $searchData['radius'] = 25;
+                }
+
+                $api_key = $this->container->getParameter('google_api_key');
+                $client = new Client();
+                $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($searchData['location']).'&key='.$api_key;
+                $response = $client->request('GET', $url, [
+                    'timeout' => 2.0,
+                ]);
+                $body = $response->getBody()->getContents();
+                // $body = '{
+                //    "results" : [
+                //       {
+                //          "geometry" : {
+                //             "location" : {
+                //                "lat" : 45.5016889,
+                //                "lng" : -73.567256
+                //             }
+                //          }
+                //       }
+                //    ]
+                // }
+                // ';
+                $json = json_decode($body, true);
+                $data = $json['results'][0];
+
+                $apiCriteria->addUserFilter('nearLocation', [
+                    'latitude' => $data['geometry']['location']['lat'],
+                    'longitude' => $data['geometry']['location']['lng'],
+                    'radius' => $searchData['radius'],
+                    'unit' => 'km',
+                ]);
+
+                // TODO: handle invalid location
+            }
         }
 
         // Query

@@ -29,8 +29,8 @@ class EventSearchType extends AbstractType
                 'label' => 'Near location',
                 'required' => false,
             ])
-            ->add('range', Type\IntegerType::class, [
-                'label' => 'Within km range',
+            ->add('radius', Type\IntegerType::class, [
+                'label' => 'Within km radius',
                 'required' => false,
             ])
             ->add('cfp_status', Type\ChoiceType::class, [

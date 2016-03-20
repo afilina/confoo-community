@@ -106,14 +106,54 @@ class ConferenceEventRepository extends AbstractRepository
 
     public function addEventEndMinFilter(QueryBuilder &$queryBuilder, $value)
     {
-        $queryBuilder->andWhere('root.event_end <= :event_end_min');
+        $queryBuilder->andWhere('root.event_end >= :event_end_min');
         $queryBuilder->setParameter('event_end_min', $value);
     }
 
     public function addEventEndMaxFilter(QueryBuilder &$queryBuilder, $value)
     {
-        $queryBuilder->andWhere('root.event_end >= :event_end_max');
+        $queryBuilder->andWhere('root.event_end <= :event_end_max');
         $queryBuilder->setParameter('event_end_max', $value);
+    }
+
+    public function addHasCoordsFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        if ($value === false) {
+            $queryBuilder->andWhere('root.latitude IS NULL');
+            return;
+        }
+        if ($value === true) {
+            $queryBuilder->andWhere('root.latitude IS NOT NULL');
+            return;
+        }
+    }
+
+    public function addNearLocationFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        if ($value['unit'] == 'km') {
+            $distanceMultiplier = 6371;
+        }
+        elseif ($value['unit'] == 'mile') {
+            $distanceMultiplier = 3959;
+        }
+        else {
+            throw new \Exception('Invalid distance unit');
+        }
+
+        $queryBuilder->addSelect('(
+            '.$distanceMultiplier.' * acos (
+              cos ( radians(:latitude) )
+              * cos ( radians(root.latitude) )
+              * cos( radians(root.longitude) - radians(:longitude) )
+              + sin ( radians(:latitude) )
+              * sin ( radians(root.latitude) )
+            )
+          ) distance');
+
+        $queryBuilder->having('distance <= :radius');
+        $queryBuilder->setParameter('latitude', $value['latitude']);
+        $queryBuilder->setParameter('longitude', $value['longitude']);
+        $queryBuilder->setParameter('radius', $value['radius']);
     }
 
     public function addCfpStatusFilter(QueryBuilder &$queryBuilder, $value)

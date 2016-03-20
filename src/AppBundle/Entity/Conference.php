@@ -110,4 +110,9 @@ class Conference
         $this->speaker_kit = $speaker_kit;
         $speaker_kit->conference = $this;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
