@@ -33,7 +33,7 @@ class OrganizationRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, key, name, website, twitter} AS item')
+            ->select('PARTIAL root.{id, key, name, website, twitter, type} AS item')
             ->addSelect('event')
             ->leftJoin('root.events', 'event')
             ->addSelect('speaker_kit')
@@ -49,7 +49,7 @@ class OrganizationRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, key, name, website, twitter, tags} AS item')
+            ->select('PARTIAL root.{id, key, name, website, twitter, tags, type} AS item')
             ->addSelect('PARTIAL event.{id, location, event_start, event_end, cfp_start, cfp_end}')
             ->leftJoin('root.events', 'event')
         ;
@@ -75,8 +75,8 @@ class OrganizationRepository extends AbstractRepository
     {
         $tagList = $this->findTagList(new ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
         $tags = [];
-        foreach ($tagList['data'] as $conf) {
-            $tags = array_merge($tags, $conf['tags']);
+        foreach ($tagList['data'] as $org) {
+            $tags = array_merge($tags, $org['tags']);
         }
         $tags = array_unique($tags);
         sort($tags);

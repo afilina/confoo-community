@@ -101,7 +101,13 @@ class Event
     public function getCfpStatus()
     {
         $now = time();
-        if ($this->cfp_end == null || $this->cfp_end->getTimestamp() < $now) {
+        if ($this->cfp_end == null) {
+            return [
+                'name' => 'Unknown',
+                'key' => 'closed',
+            ];
+        }
+        if ($this->cfp_end->getTimestamp() < $now) {
             return [
                 'name' => 'Closed',
                 'key' => 'closed',

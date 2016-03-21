@@ -30,19 +30,26 @@
 
     <div class="col-md-6">
 
-        {% set cfpStatus = event.getCfpStatus() %}
-        {% set cfpStatusLabels = {'upcoming': 'label-warning', 'open': 'label-success', 'closed': 'label-danger'} %}
-        <p>
-            Call for papers: 
-            <span class="cfp-status label {{ cfpStatusLabels[cfpStatus.key] }}">{{ cfpStatus.name }}</span>
-            {% if cfpStatus.key == 'open' %}
-                (ends {{ event.cfp_end|date("M j") }})
-            {% elseif cfpStatus.key == 'upcoming' %}
-                (opens {{ event.cfp_start|date("M j") }})
-            {% endif %}
-            <br>
-            Speaker kit includes: {{ event.organization.speaker_kit.getIncluded()|join(', ') }}
-        </p>
+        {% set eventType = event.organization.getTypeName() %}
+        Event type: {{ eventType }}
+
+        {% if event.organization.type == 'conf' %}
+
+            {% set cfpStatus = event.getCfpStatus() %}
+            {% set cfpStatusLabels = {'upcoming': 'label-warning', 'open': 'label-success', 'closed': 'label-danger'} %}
+            <p>
+                Call for papers: 
+                <span class="cfp-status label {{ cfpStatusLabels[cfpStatus.key] }}">{{ cfpStatus.name }}</span>
+                {% if cfpStatus.key == 'open' %}
+                    (ends {{ event.cfp_end|date("M j") }})
+                {% elseif cfpStatus.key == 'upcoming' %}
+                    (opens {{ event.cfp_start|date("M j") }})
+                {% endif %}
+                <br>
+                Speaker kit includes: {{ event.organization.speaker_kit.getIncluded()|join(', ') }}
+            </p>
+
+        {% endif %}
 
     </div>
 

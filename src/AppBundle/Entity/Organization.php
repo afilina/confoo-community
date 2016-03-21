@@ -164,6 +164,16 @@ class Organization
         $speaker_kit->organization = $this;
     }
 
+    public function getTypeName()
+    {
+        $types = [
+            'conf' => 'Conference',
+            'ug' => 'User group',
+            'hackathon' => 'Hackathon',
+        ];
+        return $types[$this->type];
+    }
+
     public function __toString()
     {
         return $this->name;

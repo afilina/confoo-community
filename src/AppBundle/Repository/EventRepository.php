@@ -32,8 +32,8 @@ class EventRepository extends AbstractRepository
         $query = $this
             ->createQueryBuilder('root')
             ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
-            ->addSelect('PARTIAL conf.{id, name, website, twitter, tags}')
-            ->innerJoin('root.organization', 'conf')
+            ->addSelect('PARTIAL org.{id, name, website, twitter, tags, type}')
+            ->innerJoin('root.organization', 'org')
         ;
         $apiQuery = new ApiQuery($this, $query, $criteria);
 
@@ -48,8 +48,8 @@ class EventRepository extends AbstractRepository
         $query = $this
             ->createQueryBuilder('root')
             ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
-            ->addSelect('PARTIAL conf.{id, name, website, twitter, tags}')
-            ->innerJoin('root.organization', 'conf')
+            ->addSelect('PARTIAL org.{id, name, website, twitter, tags, type}')
+            ->innerJoin('root.organization', 'org')
         ;
         $apiQuery = new ApiQuery($this, $query, $criteria);
 
@@ -59,7 +59,7 @@ class EventRepository extends AbstractRepository
 
     public function addFilterJoins(QueryBuilder &$queryBuilder)
     {
-        $queryBuilder->innerJoin('root.organization', 'conf');
+        $queryBuilder->innerJoin('root.organization', 'org');
     }
 
     public function addIdFilter(QueryBuilder &$queryBuilder, $value)
@@ -70,8 +70,8 @@ class EventRepository extends AbstractRepository
 
     public function addOrganizationFilter(QueryBuilder &$queryBuilder, $value)
     {
-        $queryBuilder->andWhere('root.organization = :conf_id');
-        $queryBuilder->setParameter('conf_id', $value);
+        $queryBuilder->andWhere('root.organization = :org_id');
+        $queryBuilder->setParameter('org_id', $value);
     }
 
     public function addCfpStartFilter(QueryBuilder &$queryBuilder, $value)
@@ -186,12 +186,21 @@ class EventRepository extends AbstractRepository
         }
     }
 
+    public function addTypeFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        if ($value == 'all') {
+            return;
+        }
+        $queryBuilder->andWhere('org.type = :type');
+        $queryBuilder->setParameter('type', $value);
+    }
+
     public function addTagFilter(QueryBuilder &$queryBuilder, $value)
     {
         if ($value == 'all') {
             return;
         }
-        $queryBuilder->andWhere('conf.tags LIKE :tag');
+        $queryBuilder->andWhere('org.tags LIKE :tag');
         $queryBuilder->setParameter('tag', '%"'.$value.'"%');
     }
 

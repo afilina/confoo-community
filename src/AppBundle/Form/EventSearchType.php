@@ -13,6 +13,15 @@ class EventSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('type', Type\ChoiceType::class, [
+                'label' => 'Event type',
+                'choices'  => array(
+                    'Any' => 'all',
+                    'Conference' => 'conf',
+                    'User group' => 'ug',
+                ),
+                'required' => true,
+            ])
             ->add('min_date', Type\DateType::class, [
                 'label' => 'Starts after (yyyy-mm-dd)',
                 'html5' => true,
@@ -36,9 +45,9 @@ class EventSearchType extends AbstractType
             ->add('cfp_status', Type\ChoiceType::class, [
                 'label' => 'Call for papers',
                 'choices'  => array(
-                    'not open yet' => 'upcoming',
-                    'open' => 'open',
-                    'closed' => 'closed',
+                    'Not open yet' => 'upcoming',
+                    'Open' => 'open',
+                    'Closed or unknown' => 'closed',
                 ),
                 'required' => false,
             ])

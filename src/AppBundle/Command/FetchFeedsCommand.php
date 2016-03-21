@@ -13,7 +13,8 @@ use GuzzleHttp\Client;
 use ApiBundle\Repository\ApiCriteria;
 use AppBundle\Entity as Entity;
 
-class FetchUserGroupsCommand extends ContainerAwareCommand
+// This should be executed hourly or less often.
+class FetchFeedsCommand extends ContainerAwareCommand
 {
     private $conn;
     private $orgRepo;
@@ -21,7 +22,7 @@ class FetchUserGroupsCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('usergroups:fetch')
+            ->setName('feeds:fetch')
         ;
     }
 
@@ -45,7 +46,6 @@ class FetchUserGroupsCommand extends ContainerAwareCommand
             'timeout' => 2.0,
         ]);
         $userGroups = json_decode($response->getBody()->getContents(), true);
-        // $userGroups = json_decode(file_get_contents(__DIR__.'/user-groups.json'), true);
 
         // Merge with database
         $batchSize = 10;
@@ -57,11 +57,19 @@ class FetchUserGroupsCommand extends ContainerAwareCommand
             $apiCriteria = new ApiCriteria(['key' => $userGroup['key']]);
             $orgEntity = $this->orgRepo->findItem($apiCriteria, 1)['data'];
             if ($orgEntity == null) {
-                $orgEntity = new Entity\Organization();
+                continue;
             }
 
-            $orgEntity->replaceWithArray($userGroup);
-            $orgEntity->type = 'ug';
+            if (isset($userGroup['calendar_feed']) && !empty($userGroup['calendar_feed'])) {
+                // Only parse .ical for now
+                if (in_array(substr($userGroup['calendar_feed'], -5), ['.ical', '/ical', 'ical/'])) {
+                    $response = $client->request('GET', $userGroup['calendar_feed'], [
+                        'timeout' => 2.0,
+                    ]);
+                    $icalData = $response->getBody()->getContents();
+                    $orgEntity->mergeIcalData($icalData);
+                }
+            }
 
             $em->persist($orgEntity);
 

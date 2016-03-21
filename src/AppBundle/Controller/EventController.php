@@ -52,6 +52,9 @@ class EventController extends Controller
             if (!empty($searchData['cfp_status'])) {
                 $apiCriteria->addUserFilter('cfpStatus', $searchData['cfp_status']);
             }
+            if (!empty($searchData['cfp_status'])) {
+                $apiCriteria->addUserFilter('type', $searchData['type']);
+            }
             if (!empty($searchData['location'])) {
 
                 if (empty($searchData['radius'])) {
