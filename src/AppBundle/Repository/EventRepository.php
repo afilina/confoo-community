@@ -9,9 +9,9 @@ use ApiBundle\Repository\RepositoryInterface;
 use ApiBundle\Repository\ApiCriteria;
 use ApiBundle\Repository\ApiQuery;
 
-class ConferenceEventRepository extends AbstractRepository
+class EventRepository extends AbstractRepository
 {
-    private $name = 'conference event';
+    private $name = 'event';
 
     public function saveItem($item, $immediate = true)
     {
@@ -33,7 +33,7 @@ class ConferenceEventRepository extends AbstractRepository
             ->createQueryBuilder('root')
             ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
             ->addSelect('PARTIAL conf.{id, name, website, twitter, tags}')
-            ->innerJoin('root.conference', 'conf')
+            ->innerJoin('root.organization', 'conf')
         ;
         $apiQuery = new ApiQuery($this, $query, $criteria);
 
@@ -49,7 +49,7 @@ class ConferenceEventRepository extends AbstractRepository
             ->createQueryBuilder('root')
             ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
             ->addSelect('PARTIAL conf.{id, name, website, twitter, tags}')
-            ->innerJoin('root.conference', 'conf')
+            ->innerJoin('root.organization', 'conf')
         ;
         $apiQuery = new ApiQuery($this, $query, $criteria);
 
@@ -59,7 +59,7 @@ class ConferenceEventRepository extends AbstractRepository
 
     public function addFilterJoins(QueryBuilder &$queryBuilder)
     {
-        $queryBuilder->innerJoin('root.conference', 'conf');
+        $queryBuilder->innerJoin('root.organization', 'conf');
     }
 
     public function addIdFilter(QueryBuilder &$queryBuilder, $value)
@@ -68,9 +68,9 @@ class ConferenceEventRepository extends AbstractRepository
         $queryBuilder->setParameter('id', $value);
     }
 
-    public function addConferenceFilter(QueryBuilder &$queryBuilder, $value)
+    public function addOrganizationFilter(QueryBuilder &$queryBuilder, $value)
     {
-        $queryBuilder->andWhere('root.conference = :conf_id');
+        $queryBuilder->andWhere('root.organization = :conf_id');
         $queryBuilder->setParameter('conf_id', $value);
     }
 

@@ -31,7 +31,7 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
         $output->getFormatter()->setStyle('ok', new OutputFormatterStyle('black', 'green'));
         $output->getFormatter()->setStyle('warn', new OutputFormatterStyle('black', 'yellow'));
 
-        $this->eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+        $this->eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Event');
 
         $this->executeOnce();
     }
@@ -127,7 +127,7 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
             // Reformat the location since we already have the new address
             // $event->location['name'] = $data['address_components']['formatted_address'];
 
-            $sql = 'UPDATE conference_event SET latitude = :lat, longitude = :lng WHERE id = :id';
+            $sql = 'UPDATE event SET latitude = :lat, longitude = :lng WHERE id = :id';
             $stmt = $em->getConnection()->prepare($sql);
             $stmt->bindParam(':lat', $data['geometry']['location']['lat']);
             $stmt->bindParam(':lng', $data['geometry']['location']['lng']);

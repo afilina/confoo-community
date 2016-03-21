@@ -16,7 +16,7 @@ use AppBundle\Entity as Entity;
 class FetchConferencesCommand extends ContainerAwareCommand
 {
     private $conn;
-    private $conferenceRepo;
+    private $orgRepo;
 
     protected function configure()
     {
@@ -31,7 +31,7 @@ class FetchConferencesCommand extends ContainerAwareCommand
         $output->getFormatter()->setStyle('ok', new OutputFormatterStyle('black', 'green'));
         $output->getFormatter()->setStyle('warn', new OutputFormatterStyle('black', 'yellow'));
 
-        $this->conferenceRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Conference');
+        $this->orgRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Organization');
 
         $this->executeOnce();
     }
@@ -53,13 +53,14 @@ class FetchConferencesCommand extends ContainerAwareCommand
 
         foreach ($conferences as $conference) {
             $apiCriteria = new ApiCriteria(['key' => $conference['key']]);
-            $conferenceEntity = $this->conferenceRepo->findItem($apiCriteria, 1)['data'];
-            if ($conferenceEntity == null) {
-                $conferenceEntity = new Entity\Conference();
+            $orgEntity = $this->orgRepo->findItem($apiCriteria, 1)['data'];
+            if ($orgEntity == null) {
+                $orgEntity = new Entity\Organization();
             }
 
-            $conferenceEntity->replaceWithArray($conference);
-            $em->persist($conferenceEntity);
+            $orgEntity->replaceWithArray($conference);
+            $orgEntity->type = 'conf';
+            $em->persist($orgEntity);
             if (($batchI % $batchSize) === 0) {
                 $em->flush();
                 $em->clear();

@@ -39,9 +39,9 @@ class SpeakerKit
     protected $is_unknown = true;
 
     /**
-     * @ORM\OneToOne(targetEntity="Conference", inversedBy="speaker_kit")
+     * @ORM\OneToOne(targetEntity="Organization", inversedBy="speaker_kit")
      **/
-    protected $conference;
+    protected $organization;
 
     public function replaceWithArray(array $array)
     {

@@ -18,8 +18,8 @@ class AlertController extends Controller
      */
     public function cfpSubscribeAction(Request $request)
     {
-        $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
-        $tags = $confRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
+        $orgRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Organization');
+        $tags = $orgRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
 
         $alert = new \AppBundle\Entity\CfpAlert();
         $alertForm = $this->createForm(\AppBundle\Form\AlertType::class, $alert, [

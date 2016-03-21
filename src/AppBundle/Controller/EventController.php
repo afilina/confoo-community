@@ -23,8 +23,8 @@ class EventController extends Controller
         $tag = $request->attributes->get('tag');
         $page = $request->attributes->get('page');
 
-        $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
-        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+        $orgRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Organization');
+        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Event');
 
         $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
             'tag' => $tag,
@@ -98,7 +98,7 @@ class EventController extends Controller
 
         // Query
         $events = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT);
-        $tags = $confRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
+        $tags = $orgRepo->getTagList(new \ApiBundle\Repository\ApiCriteria(), AbstractQuery::HYDRATE_ARRAY);
 
         $pages = [];
         for ($i=0; $i < $events['meta']['pages']; $i++) { 
@@ -132,11 +132,11 @@ class EventController extends Controller
         $apiCriteria->addSystemFilter('tag', $tag);
         $apiCriteria->sorting = '-cfpEndDate';
         $apiCriteria->pageNumber = $page;
-        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Event');
         $openCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT);
 
-        $confRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Conference');
-        $tags = $confRepo->getTagList();
+        $orgRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Organization');
+        $tags = $orgRepo->getTagList();
 
         $pages = [];
         for ($i=0; $i < $openCfps['meta']['pages']; $i++) { 
@@ -168,7 +168,7 @@ class EventController extends Controller
     public function viewAction(Request $request)
     {
         $id = $request->attributes->get('id');
-        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+        $eventRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\Event');
 
         $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
             'id' => $id,
@@ -180,7 +180,7 @@ class EventController extends Controller
         }
 
         // $apiCriteria = new \ApiBundle\Repository\ApiCriteria([
-        //     'conference' => $event->conference->id,
+        //     'organization' => $event->organization->id,
         // ]);
         // $apiCriteria->sorting = '-eventStart';
         // $events = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_OBJECT)['data'];

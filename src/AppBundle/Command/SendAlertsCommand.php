@@ -77,7 +77,7 @@ class SendAlertsCommand extends ContainerAwareCommand
                 $apiCriteria->allowIgnorePagination = true;
                 $apiCriteria->sorting = 'eventStart';
                 
-                $eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\ConferenceEvent');
+                $eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Event');
                 $newCfps = $eventRepo->findList($apiCriteria, AbstractQuery::HYDRATE_ARRAY);
                 if (count($newCfps['data']) == 0) {
                     continue;

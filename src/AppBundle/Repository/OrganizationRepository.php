@@ -11,9 +11,9 @@ use ApiBundle\Repository\RepositoryInterface;
 use ApiBundle\Repository\ApiCriteria;
 use ApiBundle\Repository\ApiQuery;
 
-class ConferenceRepository extends AbstractRepository
+class OrganizationRepository extends AbstractRepository
 {
-    private $name = 'conference';
+    private $name = 'organizaiton';
 
     public function saveItem($item, $immediate = true)
     {

@@ -4,10 +4,10 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="\AppBundle\Repository\ConferenceEventRepository")
+ * @ORM\Entity(repositoryClass="\AppBundle\Repository\EventRepository")
  * @ORM\Table()
  */
-class ConferenceEvent
+class Event
 {
     use \ApiBundle\Entity\AccessorTrait;
 
@@ -19,9 +19,9 @@ class ConferenceEvent
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Conference", inversedBy="events")
+     * @ORM\ManyToOne(targetEntity="Organization", inversedBy="events")
      **/
-    protected $conference;
+    protected $organization;
 
     /**
      * @ORM\Column(type="string", length=255)

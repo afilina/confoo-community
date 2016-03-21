@@ -5,10 +5,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity(repositoryClass="\AppBundle\Repository\ConferenceRepository")
+ * @ORM\Entity(repositoryClass="\AppBundle\Repository\OrganizationRepository")
  * @ORM\Table(indexes={@ORM\Index(name="key_idx", columns={"unique_key"})})
  */
-class Conference
+class Organization
 {
     use \ApiBundle\Entity\AccessorTrait;
 
@@ -45,12 +45,12 @@ class Conference
     protected $last_event = null;
 
     /**
-     * @ORM\OneToOne(targetEntity="SpeakerKit", mappedBy="conference", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="SpeakerKit", mappedBy="organization", cascade={"persist"})
      **/
     protected $speaker_kit;
 
     /**
-     * @ORM\OneToMany(targetEntity="ConferenceEvent", mappedBy="conference", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="organization", cascade={"persist"})
      **/
     protected $events;
 
@@ -58,6 +58,12 @@ class Conference
      * @ORM\Column(type="string", length=255)
      */
     protected $website;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     * ug|conf|hackathon
+     */
+    protected $type;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -82,13 +88,13 @@ class Conference
             $this->setSpeakerKit(new SpeakerKit());
         }
         foreach ($array['events'] as $i => $event) {
-            $conferenceEvent = $this->events->get($i);
-            if ($conferenceEvent == null) {
-                $conferenceEvent = new ConferenceEvent();
-                $this->addEvent($conferenceEvent);
+            $Event = $this->events->get($i);
+            if ($Event == null) {
+                $Event = new Event();
+                $this->addEvent($Event);
                 
             }
-            $conferenceEvent->replaceWithArray($event);
+            $Event->replaceWithArray($event);
         }
         $this->speaker_kit->is_unknown = true;
         if (!empty($array['speaker_kit'])) {
@@ -101,16 +107,16 @@ class Conference
         }
     }
 
-    public function addEvent(ConferenceEvent $event)
+    public function addEvent(Event $event)
     {
         $this->events->add($event);
-        $event->conference = $this;
+        $event->organization = $this;
     }
 
     public function setSpeakerKit(SpeakerKit $speaker_kit)
     {
         $this->speaker_kit = $speaker_kit;
-        $speaker_kit->conference = $this;
+        $speaker_kit->organization = $this;
     }
 
     public function __toString()

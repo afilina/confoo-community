@@ -15,11 +15,11 @@
 
         {% if excludeLinks is not defined or excludeLinks == false %}
         <p><div class="btn-group" role="group">
-            <a href="{{ event.conference.website }}" class="btn btn-default">
+            <a href="{{ event.organization.website }}" class="btn btn-default">
                 <i class="fa fa-globe"></i>
                 Website
             </a>
-            <a href="https://twitter.com/{{ event.conference.twitter }}" class="btn btn-default">
+            <a href="https://twitter.com/{{ event.organization.twitter }}" class="btn btn-default">
                 <i class="fa fa-twitter"></i>
                 Twitter
             </a>
@@ -41,7 +41,7 @@
                 (opens {{ event.cfp_start|date("M j") }})
             {% endif %}
             <br>
-            Speaker kit includes: {{ event.conference.speaker_kit.getIncluded()|join(', ') }}
+            Speaker kit includes: {{ event.organization.speaker_kit.getIncluded()|join(', ') }}
         </p>
 
     </div>
