@@ -1,0 +1,275 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//RemoteApi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-ORIGINAL-URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events
+ /ical/
+X-WR-CALNAME:Events - South Florida PHP User Group (SoFloPHP)
+BEGIN:VTIMEZONE
+TZID:America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160413T190000
+DTEND;TZID=America/New_York:20160413T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Using PHPStorm)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, April 13
+  at 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bound 
+ to be good even if we simply get together and chat about what we are all
+  up to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP-Use
+ rs-Group/events/229636095/
+CLASS:PUBLIC
+CREATED:20160316T145606Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/229636095/
+ 
+LAST-MODIFIED:20160316T145606Z
+UID:event_hwdhrlyvgbrb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160415T190000
+DTEND;TZID=America/New_York:20160415T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, April 15 at
+  7:00 PM\n\nThis meetup is "Open" subject night\, and an opportunity to 
+ get together at a specific day/time. If you have a problem or hurdle you
+  can't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Users-
+ Group/events/228690396/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+LOCATION:Panera Bread (222 Yamato Rd\, Boca Raton\, FL 33487)
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/228690396/
+ 
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvgbtb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160420T180000
+DTEND;TZID=America/New_York:20160420T200000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP WPB (North Palm Beach County Kickoff)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, April 20
+  at 6:00 PM\n\nCome out and join us for the first meetup in northern Pal
+ m Beach County. We'll have some food and drinks\, and get to know each o
+ ther as well as talk a...\n\nhttp://www.meetup.com/South-Florida-PHP-Use
+ rs-Group/events/229636075/
+CLASS:PUBLIC
+CREATED:20160316T145524Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/229636075/
+ 
+LAST-MODIFIED:20160316T145524Z
+UID:event_229636075@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160511T190000
+DTEND;TZID=America/New_York:20160511T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Monthly Meetup)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, May 11 a
+ t 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bound to
+  be good even if we simply get together and chat about what we are all u
+ p to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP-Users
+ -Group/events/hwdhrlyvhbpb/
+CLASS:PUBLIC
+CREATED:20160307T221222Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/hwdhrlyvhb
+ pb/
+LAST-MODIFIED:20160307T221222Z
+UID:event_hwdhrlyvhbpb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160520T190000
+DTEND;TZID=America/New_York:20160520T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, May 20 at 7
+ :00 PM\n\nThis meetup is "Open" subject night\, and an opportunity to ge
+ t together at a specific day/time. If you have a problem or hurdle you c
+ an't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Users-Gr
+ oup/events/dwmspdyvhbbc/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/dwmspdyvhb
+ bc/
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvhbbc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160608T190000
+DTEND;TZID=America/New_York:20160608T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Monthly Meetup)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, June 8 a
+ t 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bound to
+  be good even if we simply get together and chat about what we are all u
+ p to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP-Users
+ -Group/events/hwdhrlyvjblb/
+CLASS:PUBLIC
+CREATED:20160307T221222Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/hwdhrlyvjb
+ lb/
+LAST-MODIFIED:20160307T221222Z
+UID:event_hwdhrlyvjblb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160617T190000
+DTEND;TZID=America/New_York:20160617T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, June 17 at 
+ 7:00 PM\n\nThis meetup is "Open" subject night\, and an opportunity to g
+ et together at a specific day/time. If you have a problem or hurdle you 
+ can't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Users-G
+ roup/events/dwmspdyvjbwb/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/dwmspdyvjb
+ wb/
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvjbwb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160713T190000
+DTEND;TZID=America/New_York:20160713T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Monthly Meetup)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, July 13 
+ at 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bound t
+ o be good even if we simply get together and chat about what we are all 
+ up to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP-User
+ s-Group/events/hwdhrlyvkbrb/
+CLASS:PUBLIC
+CREATED:20160307T221222Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/hwdhrlyvkb
+ rb/
+LAST-MODIFIED:20160307T221222Z
+UID:event_hwdhrlyvkbrb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160715T190000
+DTEND;TZID=America/New_York:20160715T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, July 15 at 
+ 7:00 PM\n\nThis meetup is "Open" subject night\, and an opportunity to g
+ et together at a specific day/time. If you have a problem or hurdle you 
+ can't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Users-G
+ roup/events/dwmspdyvkbtb/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/dwmspdyvkb
+ tb/
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvkbtb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160810T190000
+DTEND;TZID=America/New_York:20160810T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Monthly Meetup)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, August 1
+ 0 at 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bound
+  to be good even if we simply get together and chat about what we are al
+ l up to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP-Us
+ ers-Group/events/227468764/
+CLASS:PUBLIC
+CREATED:20140307T121858Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/227468764/
+ 
+LAST-MODIFIED:20160307T221222Z
+UID:event_hwdhrlyvlbnb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160819T190000
+DTEND;TZID=America/New_York:20160819T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, August 19 a
+ t 7:00 PM\n\nThis meetup is "Open" subject night\, and an opportunity to
+  get together at a specific day/time. If you have a problem or hurdle yo
+ u can't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Users
+ -Group/events/dwmspdyvlbzb/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/dwmspdyvlb
+ zb/
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvlbzb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160914T190000
+DTEND;TZID=America/New_York:20160914T210000
+STATUS:CONFIRMED
+SUMMARY:SoFloPHP Boca (Monthly Meetup)
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nWednesday\, Septembe
+ r 14 at 7:00 PM\n\nA subject for this meetup not firm yet\, but it is bo
+ und to be good even if we simply get together and chat about what we are
+  all up to lately.  Most o...\n\nhttp://www.meetup.com/South-Florida-PHP
+ -Users-Group/events/hwdhrlyvmbsb/
+CLASS:PUBLIC
+CREATED:20160307T221222Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/hwdhrlyvmb
+ sb/
+LAST-MODIFIED:20160307T221222Z
+UID:event_hwdhrlyvmbsb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=America/New_York:20160916T190000
+DTEND;TZID=America/New_York:20160916T220000
+STATUS:CONFIRMED
+SUMMARY:Open subject and/or hack night
+DESCRIPTION:South Florida PHP User Group (SoFloPHP)\nFriday\, September 1
+ 6 at 7:00 PM\n\nThis meetup is "Open" subject night\, and an opportunity
+  to get together at a specific day/time. If you have a problem or hurdle
+  you can't seem to solv...\n\nhttp://www.meetup.com/South-Florida-PHP-Us
+ ers-Group/events/dwmspdyvmbvb/
+CLASS:PUBLIC
+CREATED:20121010T165753Z
+GEO:26.40;-80.16
+URL:http://www.meetup.com/South-Florida-PHP-Users-Group/events/dwmspdyvmb
+ vb/
+LAST-MODIFIED:20130910T205754Z
+UID:event_dwmspdyvmbvb@meetup.com
+END:VEVENT
+END:VCALENDAR

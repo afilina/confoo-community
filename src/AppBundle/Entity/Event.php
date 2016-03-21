@@ -26,6 +26,11 @@ class Event
     /**
      * @ORM\Column(type="string", length=255)
      */
+    protected $unique_key;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $name;
 
     /**

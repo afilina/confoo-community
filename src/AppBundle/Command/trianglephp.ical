@@ -1,0 +1,128 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//RemoteApi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-ORIGINAL-URL:http://www.meetup.com/trianglephp/events/ical/
+X-WR-CALNAME:Events - TrianglePHP
+BEGIN:VTIMEZONE
+TZID:America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160421T180000
+DTEND;TZID=America/New_York:20160421T210000
+STATUS:CONFIRMED
+SUMMARY:PHP Show & Tell
+DESCRIPTION:TrianglePHP\nThursday\, April 21 at 6:00 PM\n\nWe invite you 
+ to share your ideas.  Please message Emily (or comment below) what you w
+ ould like to share and how long you would like to share.  This w...\n\nh
+ ttp://www.meetup.com/trianglephp/events/228845012/
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+LOCATION:Atlantic BT (4509 Creedmoor Road Suite 100\, Raleigh\, NC)
+URL:http://www.meetup.com/trianglephp/events/228845012/
+LAST-MODIFIED:20160318T141206Z
+UID:event_kfzcklyvgbcc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160519T180000
+DTEND;TZID=America/New_York:20160519T210000
+STATUS:CONFIRMED
+SUMMARY:PHP
+DESCRIPTION:TrianglePHP\nThursday\, May 19 at 6:00 PM\n\nAgenda  6-7pm:  
+ Networking\, Have-a-job Need-a-job  7pm - 7:45pm:  Presentation  7:45pm 
+ - 8pm:  Q&A \n\nhttp://www.meetup.com/trianglephp/events/229689182/
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+URL:http://www.meetup.com/trianglephp/events/229689182/
+LAST-MODIFIED:20150821T022936Z
+UID:event_kfzcklyvhbzb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160616T180000
+DTEND;TZID=America/New_York:20160616T210000
+STATUS:CONFIRMED
+SUMMARY:PHP
+DESCRIPTION:TrianglePHP\nThursday\, June 16 at 6:00 PM\n\nAgenda \n6-7pm:
+   Networking\, Have-a-job Need-a-job \n7pm - 7:45pm:  Presentation \n7:4
+ 5pm - 8pm:  Q&A \n\nhttp://www.meetup.com/trianglephp/events/kfzcklyvjbv
+ b/
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+URL:http://www.meetup.com/trianglephp/events/kfzcklyvjbvb/
+LAST-MODIFIED:20150821T022936Z
+UID:event_kfzcklyvjbvb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160721T180000
+DTEND;TZID=America/New_York:20160721T210000
+STATUS:CONFIRMED
+SUMMARY:PHP
+DESCRIPTION:TrianglePHP\nThursday\, July 21 at 6:00 PM\n\nAgenda \n6-7pm:
+   Networking\, Have-a-job Need-a-job \n7pm - 7:45pm:  Presentation \n7:4
+ 5pm - 8pm:  Q&A \n\nhttp://www.meetup.com/trianglephp/events/kfzcklyvkbc
+ c/
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+URL:http://www.meetup.com/trianglephp/events/kfzcklyvkbcc/
+LAST-MODIFIED:20150821T022936Z
+UID:event_kfzcklyvkbcc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160818T180000
+DTEND;TZID=America/New_York:20160818T210000
+STATUS:CONFIRMED
+SUMMARY:PHP
+DESCRIPTION:TrianglePHP\nThursday\, August 18 at 6:00 PM\n\nAgenda \n6-7p
+ m:  Networking\, Have-a-job Need-a-job \n7pm - 7:45pm:  Presentation \n7
+ :45pm - 8pm:  Q&A \n\nhttp://www.meetup.com/trianglephp/events/kfzcklyvl
+ bxb/
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+URL:http://www.meetup.com/trianglephp/events/kfzcklyvlbxb/
+LAST-MODIFIED:20150821T022936Z
+UID:event_kfzcklyvlbxb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/New_York:20160915T180000
+DTEND;TZID=America/New_York:20160915T210000
+STATUS:CONFIRMED
+SUMMARY:PHP
+DESCRIPTION:TrianglePHP\nThursday\, September 15 at 6:00 PM\n\nAgenda  6-
+ 7pm:  Networking\, Have-a-job Need-a-job  7pm - 7:45pm:  Presentation  7
+ :45pm - 8pm:  Q&A \n\nhttp://www.meetup.com/trianglephp/events/228949665
+ /
+CLASS:PUBLIC
+CREATED:20150821T022936Z
+GEO:35.86;-78.52
+URL:http://www.meetup.com/trianglephp/events/228949665/
+LAST-MODIFIED:20150821T022936Z
+UID:event_kfzcklyvmbtb@meetup.com
+END:VEVENT
+END:VCALENDAR

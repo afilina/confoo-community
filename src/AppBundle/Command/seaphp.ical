@@ -1,0 +1,98 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//RemoteApi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-ORIGINAL-URL:http://www.meetup.com/seaphp/events/ical/
+X-WR-CALNAME:Events - Seattle PHP User Group
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+X-LIC-LOCATION:America/Los_Angeles
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/Los_Angeles:20160405T183000
+DTEND;TZID=America/Los_Angeles:20160405T203000
+STATUS:CONFIRMED
+SUMMARY:SeaPHP Meetup @ Moz - April 2016
+DESCRIPTION:Seattle PHP User Group\nTuesday\, April 5 at 6:30 PM\n\nJoin 
+ us for our April PHP meetup at   Moz  on Tuesday\, April 5th. Robert McF
+ razier will be speaking about Docker\, and Jimmy Fursman will be speakin
+ g a...\n\nhttp://www.meetup.com/seaphp/events/227925707/
+CLASS:PUBLIC
+CREATED:20160107T234540Z
+GEO:47.61;-122.33
+LOCATION:Moz (1100 2nd Ave.\, Suite 500\, Seattle\, WA)
+URL:http://www.meetup.com/seaphp/events/227925707/
+LAST-MODIFIED:20160217T230730Z
+UID:event_227925707@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/Los_Angeles:20160419T183000
+DTEND;TZID=America/Los_Angeles:20160419T203000
+STATUS:CONFIRMED
+SUMMARY:[Hack/HHVM] - Using Static Type Analysis/Configuring Proxygen
+DESCRIPTION:Seattle PHP User Group\nTuesday\, April 19 at 6:30 PM\n\nJoin
+  us for our first quarterly evening devoted to all things Hack and HHVM!
+  This meetup is hosted at Moz\, just like the normal monthly meetups.  T
+ han...\n\nhttp://www.meetup.com/seaphp/events/227925756/
+CLASS:PUBLIC
+CREATED:20160107T234856Z
+GEO:47.61;-122.33
+LOCATION:Moz (1100 2nd Ave.\, Suite 500\, Seattle\, WA)
+URL:http://www.meetup.com/seaphp/events/227925756/
+LAST-MODIFIED:20160304T223309Z
+UID:event_227925756@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/Los_Angeles:20160510T183000
+DTEND;TZID=America/Los_Angeles:20160510T203000
+STATUS:CONFIRMED
+SUMMARY:SeaPHP Meetup @ Entercom - May 2016
+DESCRIPTION:Seattle PHP User Group\nTuesday\, May 10 at 6:30 PM\n\nJoin u
+ s for our May PHP meetup at   EnterCom  on Tuesday\, May 10th. Liz Rush 
+ will be speaking about the Lesbians Who Tech community\, and Ian Maddox 
+ wi...\n\nhttp://www.meetup.com/seaphp/events/229521869/
+CLASS:PUBLIC
+CREATED:20160311T224126Z
+GEO:47.61;-122.33
+LOCATION:Entercom (1100 Olive Way\, Suit 1650\, Seattle\, WA)
+URL:http://www.meetup.com/seaphp/events/229521869/
+LAST-MODIFIED:20160312T003412Z
+UID:event_229521869@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=America/Los_Angeles:20160614T183000
+DTEND;TZID=America/Los_Angeles:20160614T203000
+STATUS:CONFIRMED
+SUMMARY:SeaPHP Meetup @ Entercom - June 2016 - LIGHTNING TALK DAY!!!!
+DESCRIPTION:Seattle PHP User Group\nTuesday\, June 14 at 6:30 PM\n\nJoin 
+ us for our May PHP meetup at   EnterCom  on Tuesday\, June 14th\, we wil
+ l be having 5 lightning talks!   Is there an opening on the schedule her
+ e? ...\n\nhttp://www.meetup.com/seaphp/events/229521957/
+CLASS:PUBLIC
+CREATED:20160311T224546Z
+GEO:47.61;-122.33
+LOCATION:Entercom (1100 Olive Way\, Suit 1650\, Seattle\, WA)
+URL:http://www.meetup.com/seaphp/events/229521957/
+LAST-MODIFIED:20160318T191128Z
+UID:event_229521957@meetup.com
+END:VEVENT
+END:VCALENDAR

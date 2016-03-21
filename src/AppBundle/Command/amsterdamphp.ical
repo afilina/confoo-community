@@ -1,0 +1,340 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//RemoteApi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-ORIGINAL-URL:http://www.meetup.com/amsterdamphp/events/ical/
+X-WR-CALNAME:Events - AmsterdamPHP
+BEGIN:VTIMEZONE
+TZID:Europe/Amsterdam
+X-LIC-LOCATION:Europe/Amsterdam
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160408T190000
+DTEND;TZID=Europe/Amsterdam:20160408T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks & drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, April 8 at 7:00 PM\n\nJoin us every se
+ cond Friday of the month for drinks at De Bekeerde Suster in Amsterdam. 
+  Chat with people you know from the user group\, or get to know...\n\nht
+ tp://www.meetup.com/AmsterdamPHP/events/221952954/
+CLASS:PUBLIC
+CREATED:20131011T084819Z
+GEO:52.36;4.88
+LOCATION:De Bekeerde Suster (Kloveniersburgwal 6\, 1012 CT\, Amsterdam\, 
+ Netherlands)
+URL:http://www.meetup.com/AmsterdamPHP/events/221952954/
+LAST-MODIFIED:20150223T195949Z
+UID:event_qqlgxgyvgblb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160421T190000
+DTEND;TZID=Europe/Amsterdam:20160421T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, April 21 at 7:00 PM\n\nIts time for 
+ our monthly meeting (every third thursday).  We are still settling the d
+ etails for where we will be and who will be speaking\, so if you h...\n\
+ nhttp://www.meetup.com/AmsterdamPHP/events/225211988/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/225211988/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvgbcc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160513T190000
+DTEND;TZID=Europe/Amsterdam:20160513T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks\, Games & Drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, May 13 at 7:00 PM\n\nEvery two months 
+ we get to take our informal drinks and chat night and make it a Board Ga
+ me extravaganza.  These meetups are great nights to come and ...\n\nhttp
+ ://www.meetup.com/AmsterdamPHP/events/228276719/
+CLASS:PUBLIC
+CREATED:20160108T105254Z
+GEO:52.36;4.88
+LOCATION:Cafe Batavia 1920 (Prins Hendrikkade 85 \, Amsterdam\, Netherlan
+ ds)
+URL:http://www.meetup.com/AmsterdamPHP/events/228276719/
+LAST-MODIFIED:20160108T105254Z
+UID:event_bkkpnlyvhbrb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160519T190000
+DTEND;TZID=Europe/Amsterdam:20160519T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, May 19 at 7:00 PM\n\nIts time for ou
+ r monthly meeting (every third thursday).  We are still settling the det
+ ails for where we will be and who will be speaking\, so if you h...\n\nh
+ ttp://www.meetup.com/AmsterdamPHP/events/225211993/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/225211993/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvhbzb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160610T190000
+DTEND;TZID=Europe/Amsterdam:20160610T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks & drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, June 10 at 7:00 PM\n\nJoin us every se
+ cond Friday of the month for drinks at De Bekeerde Suster in Amsterdam. 
+  Chat with people you know from the user group\, or get to know...\n\nht
+ tp://www.meetup.com/AmsterdamPHP/events/qqlgxgyvjbnb/
+CLASS:PUBLIC
+CREATED:20131011T084819Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/qqlgxgyvjbnb/
+LAST-MODIFIED:20150223T195949Z
+UID:event_qqlgxgyvjbnb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160616T190000
+DTEND;TZID=Europe/Amsterdam:20160616T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, June 16 at 7:00 PM\n\nIts time for o
+ ur monthly meeting (every third thursday).  We are still settling the de
+ tails for where we will be and who will be speaking\, so if you h...\n\n
+ http://www.meetup.com/AmsterdamPHP/events/223338370/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/223338370/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvjbvb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160708T190000
+DTEND;TZID=Europe/Amsterdam:20160708T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks\, Games & Drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, July 8 at 7:00 PM\n\nEvery two months 
+ we get to take our informal drinks and chat night and make it a Board Ga
+ me extravaganza.  These meetups are great nights to come and ...\n\nhttp
+ ://www.meetup.com/AmsterdamPHP/events/bkkpnlyvkblb/
+CLASS:PUBLIC
+CREATED:20160108T105254Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/bkkpnlyvkblb/
+LAST-MODIFIED:20160108T105254Z
+UID:event_bkkpnlyvkblb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160721T190000
+DTEND;TZID=Europe/Amsterdam:20160721T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, July 21 at 7:00 PM\n\nIts time for o
+ ur monthly meeting (every third thursday).  We are still settling the de
+ tails for where we will be and who will be speaking\, so if you h...\n\n
+ http://www.meetup.com/AmsterdamPHP/events/225212007/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/225212007/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvkbcc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160812T190000
+DTEND;TZID=Europe/Amsterdam:20160812T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks & drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, August 12 at 7:00 PM\n\nJoin us every 
+ second Friday of the month for drinks at De Bekeerde Suster in Amsterdam
+ .  Chat with people you know from the user group\, or get to know...\n\n
+ http://www.meetup.com/AmsterdamPHP/events/qqlgxgyvlbqb/
+CLASS:PUBLIC
+CREATED:20131011T084819Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/qqlgxgyvlbqb/
+LAST-MODIFIED:20150223T195949Z
+UID:event_qqlgxgyvlbqb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160818T190000
+DTEND;TZID=Europe/Amsterdam:20160818T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, August 18 at 7:00 PM\n\nIts time for
+  our monthly meeting (every third thursday).  We are still settling the 
+ details for where we will be and who will be speaking\, so if you h...\n
+ \nhttp://www.meetup.com/AmsterdamPHP/events/225212013/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/225212013/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvlbxb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160909T190000
+DTEND;TZID=Europe/Amsterdam:20160909T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks\, Games & Drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, September 9 at 7:00 PM\n\nEvery two mo
+ nths we get to take our informal drinks and chat night and make it a Boa
+ rd Game extravaganza.  These meetups are great nights to come and ...\n\
+ nhttp://www.meetup.com/AmsterdamPHP/events/228634913/
+CLASS:PUBLIC
+CREATED:20160108T105254Z
+GEO:52.36;4.88
+LOCATION:Cafe Batavia 1920 (Prins Hendrikkade 85 \, Amsterdam\, Netherlan
+ ds)
+URL:http://www.meetup.com/AmsterdamPHP/events/228634913/
+LAST-MODIFIED:20160108T105254Z
+UID:event_bkkpnlyvmbmb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20160915T190000
+DTEND;TZID=Europe/Amsterdam:20160915T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, September 15 at 7:00 PM\n\nIts time 
+ for our monthly meeting (every third thursday).  We are still settling t
+ he details for where we will be and who will be speaking\, so if you h..
+ .\n\nhttp://www.meetup.com/AmsterdamPHP/events/225532431/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/225532431/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvmbtb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20161014T190000
+DTEND;TZID=Europe/Amsterdam:20161014T220000
+STATUS:CONFIRMED
+SUMMARY:Geeks & drinks
+DESCRIPTION:AmsterdamPHP\nFriday\, October 14 at 7:00 PM\n\nJoin us every
+  second Friday of the month for drinks at De Bekeerde Suster in Amsterda
+ m.  Chat with people you know from the user group\, or get to know...\n\
+ nhttp://www.meetup.com/AmsterdamPHP/events/226053997/
+CLASS:PUBLIC
+CREATED:20131011T084819Z
+GEO:52.36;4.88
+LOCATION:De Bekeerde Suster (Kloveniersburgwal 6\, 1012 CT\, Amsterdam\, 
+ Netherlands)
+URL:http://www.meetup.com/AmsterdamPHP/events/226053997/
+LAST-MODIFIED:20150223T195949Z
+UID:event_qqlgxgyvnbsb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20161020T190000
+DTEND;TZID=Europe/Amsterdam:20161020T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, October 20 at 7:00 PM\n\nIts time fo
+ r our monthly meeting (every third thursday).  We are still settling the
+  details for where we will be and who will be speaking\, so if you h...\
+ n\nhttp://www.meetup.com/AmsterdamPHP/events/226904363/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/226904363/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvnbbc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20161117T190000
+DTEND;TZID=Europe/Amsterdam:20161117T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, November 17 at 7:00 PM\n\nIts time f
+ or our monthly meeting (every third thursday).  We are still settling th
+ e details for where we will be and who will be speaking\, so if you h...
+ \n\nhttp://www.meetup.com/AmsterdamPHP/events/226904365/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/226904365/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvpbwb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20161215T190000
+DTEND;TZID=Europe/Amsterdam:20161215T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, December 15 at 7:00 PM\n\nIts time f
+ or our monthly meeting (every third thursday).  We are still settling th
+ e details for where we will be and who will be speaking\, so if you h...
+ \n\nhttp://www.meetup.com/AmsterdamPHP/events/227437265/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/227437265/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlyvqbtb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20170119T190000
+DTEND;TZID=Europe/Amsterdam:20170119T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, January 19 at 7:00 PM\n\nIts time fo
+ r our monthly meeting (every third thursday).  We are still settling the
+  details for where we will be and who will be speaking\, so if you h...\
+ n\nhttp://www.meetup.com/AmsterdamPHP/events/228655944/
+CLASS:PUBLIC
+CREATED:20141120T190549Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/228655944/
+LAST-MODIFIED:20160211T192411Z
+UID:event_wsgkqlywcbzb@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181205Z
+DTSTART;TZID=Europe/Amsterdam:20170216T190000
+DTEND;TZID=Europe/Amsterdam:20170216T220000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting
+DESCRIPTION:AmsterdamPHP\nThursday\, February 16 at 7:00 PM\n\nIts time f
+ or our monthly meeting (every third thursday).  We are still settling th
+ e details for where we will be and who will be speaking\, so if you h...
+ \n\nhttp://www.meetup.com/AmsterdamPHP/events/228959385/
+CLASS:PUBLIC
+CREATED:20160211T192410Z
+GEO:52.36;4.88
+URL:http://www.meetup.com/AmsterdamPHP/events/228959385/
+LAST-MODIFIED:20160211T192410Z
+UID:event_wsgkqlywdbvb@meetup.com
+END:VEVENT
+END:VCALENDAR

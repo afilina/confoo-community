@@ -29,7 +29,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "guzzlehttp/guzzle": "^6.1",
         "nelmio/cors-bundle": "^1.4",
-        "beberlei/DoctrineExtensions": "^1.0"
+        "beberlei/DoctrineExtensions": "^1.0",
+        "sabre/vobject": "^4.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -1,0 +1,134 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//RemoteApi//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-ORIGINAL-URL:https://www.meetup.com/PHP-Oxford/events/ical/
+X-WR-CALNAME:Events - PHP Oxford
+BEGIN:VTIMEZONE
+TZID:Europe/London
+X-LIC-LOCATION:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160330T190000
+DTEND;TZID=Europe/London:20160330T220000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford March: The Robots Are Coming!
+DESCRIPTION:PHP Oxford\nWednesday\, March 30 at 7:00 PM\n\nThe Robots Are
+  Coming*! Prepare yourself for the upcoming invasion by hearing Michael 
+ Cullum (@MichaelCullumUK) speak to us about neuroscience\, artifi...\n\n
+ https://www.meetup.com/PHP-Oxford/events/228956234/
+CLASS:PUBLIC
+CREATED:20151007T194238Z
+GEO:51.75;-1.26
+LOCATION:White October (3 The Gallery\, 54 Marston Street\, OX4 1LF\, Oxf
+ ord\, United Kingdom)
+URL:https://www.meetup.com/PHP-Oxford/events/228956234/
+LAST-MODIFIED:20160310T135743Z
+UID:event_srcjllyvfbnc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160427T193000
+DTEND;TZID=Europe/London:20160427T223000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford meetup
+DESCRIPTION:PHP Oxford\nWednesday\, April 27 at 7:30 PM\n\nWe'll have a t
+ alk from one of our speakers\, details to be confirmed After which we'll
+  hopefully have a lot of questions and points of discussion when ...\n\n
+ https://www.meetup.com/PHP-Oxford/events/228956267/
+CLASS:PUBLIC
+CREATED:20151007T194238Z
+GEO:51.75;-1.26
+LOCATION:White October (3 The Gallery\, 54 Marston Street\, OX4 1LF\, Oxf
+ ord\, United Kingdom)
+URL:https://www.meetup.com/PHP-Oxford/events/228956267/
+LAST-MODIFIED:20151007T194238Z
+UID:event_srcjllyvgbkc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160525T193000
+DTEND;TZID=Europe/London:20160525T223000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford May: Docker
+DESCRIPTION:PHP Oxford\nWednesday\, May 25 at 7:30 PM\n\nImprove your bud
+ ding stevedore potential by learning about Docker with David McKay (@raw
+ kode)!  Kickass Development Environments with DockerDocker\, th...\n\nht
+ tps://www.meetup.com/PHP-Oxford/events/229486203/
+CLASS:PUBLIC
+CREATED:20160310T140233Z
+GEO:51.75;-1.26
+LOCATION:White October (3 The Gallery\, 54 Marston Street\, OX4 1LF\, Oxf
+ ord\, United Kingdom)
+URL:https://www.meetup.com/PHP-Oxford/events/229486203/
+LAST-MODIFIED:20160310T140233Z
+UID:event_srcjllyvhbhc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160629T193000
+DTEND;TZID=Europe/London:20160629T223000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford meetup
+DESCRIPTION:PHP Oxford\nWednesday\, June 29 at 7:30 PM\n\nWe'll have a ta
+ lk from one of our speakers\, details to be confirmed After which we'll 
+ hopefully have a lot of questions and points of discussion when ...\n\nh
+ ttps://www.meetup.com/PHP-Oxford/events/srcjllyvjbmc/
+CLASS:PUBLIC
+CREATED:20151007T194238Z
+GEO:51.75;-1.26
+URL:https://www.meetup.com/PHP-Oxford/events/srcjllyvjbmc/
+LAST-MODIFIED:20151007T194238Z
+UID:event_srcjllyvjbmc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160727T193000
+DTEND;TZID=Europe/London:20160727T223000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford meetup
+DESCRIPTION:PHP Oxford\nWednesday\, July 27 at 7:30 PM\n\nWe'll have a ta
+ lk from one of our speakers\, details to be confirmed After which we'll 
+ hopefully have a lot of questions and points of discussion when ...\n\nh
+ ttps://www.meetup.com/PHP-Oxford/events/srcjllyvkbkc/
+CLASS:PUBLIC
+CREATED:20151007T194238Z
+GEO:51.75;-1.26
+URL:https://www.meetup.com/PHP-Oxford/events/srcjllyvkbkc/
+LAST-MODIFIED:20151007T194238Z
+UID:event_srcjllyvkbkc@meetup.com
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20160321T181206Z
+DTSTART;TZID=Europe/London:20160831T193000
+DTEND;TZID=Europe/London:20160831T223000
+STATUS:CONFIRMED
+SUMMARY:PHP Oxford meetup
+DESCRIPTION:PHP Oxford\nWednesday\, August 31 at 7:30 PM\n\nWe'll have a 
+ talk from one of our speakers\, details to be confirmed After which we'l
+ l hopefully have a lot of questions and points of discussion when ...\n\
+ nhttps://www.meetup.com/PHP-Oxford/events/srcjllyvlbpc/
+CLASS:PUBLIC
+CREATED:20151007T194238Z
+GEO:51.75;-1.26
+URL:https://www.meetup.com/PHP-Oxford/events/srcjllyvlbpc/
+LAST-MODIFIED:20151007T194238Z
+UID:event_srcjllyvlbpc@meetup.com
+END:VEVENT
+END:VCALENDAR
