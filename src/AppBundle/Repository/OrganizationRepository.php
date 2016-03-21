@@ -65,6 +65,8 @@ class OrganizationRepository extends AbstractRepository
             ->createQueryBuilder('root')
             ->select('PARTIAL root.{id, tags} AS item')
         ;
+        $criteria->allowIgnorePagination = true;
+        $criteria->pageSize = 0;
         $apiQuery = new ApiQuery($this, $query, $criteria);
 
         $results = $apiQuery->queryList($hydration);
