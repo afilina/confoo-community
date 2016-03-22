@@ -5,22 +5,40 @@
 
 {% block body %}
 
-    <a href="/cfp/t/all" class="label label-default conf-tag">all tags</a>
-    {% for tag in tags %}
-        <a href="/cfp/t/{{ tag }}" class="label label-default conf-tag">{{ tag }}</a>
-    {% endfor %}
-
     <h1>Calling for Papers</h1>
     <p>Conferences with currently open call for papers.</p>
 
     <div class="row">
 
+
         <div class="col-md-3 col-md-push-9">
-            <p>Want to be notified of a new Call for Papers?</p>
-            {{ form_start(alertForm) }}
-            {{ form_widget(alertForm) }}
-            {{ form_rest(alertForm) }}
-            {{ form_end(alertForm) }}
+            <p class="visible-sm-block visible-xs-block">
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#alertSubscribe" aria-expanded="false" aria-controls="alertSubscribe">
+                  Call for Papers newsletter <span class="caret"></span>
+                </a>
+            </p>
+            <h3 class="hidden-xs hidden-sm">Call for Papers newsletter</h3>
+            <div class="collapse box-collapse-sm" id="alertSubscribe">
+                {{ form_start(alertForm) }}
+                {{ form_widget(alertForm) }}
+                {{ form_rest(alertForm) }}
+                {{ form_end(alertForm) }}
+            </div>
+
+            <p class="visible-sm-block visible-xs-block">
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tagSearch" aria-expanded="false" aria-controls="tagSearch">
+                  Tag search <span class="caret"></span>
+                </a>
+            </p>
+            <h3 class="hidden-xs hidden-sm">Tag search</h3>
+            <div class="collapse box-collapse-sm" id="tagSearch">
+                <p>
+                    <a href="{{ path('cfp_list', {'page': 1, 'tag': 'all'}) }}" class="label label-default conf-tag">all tags</a>
+                    {% for tag in tags %}
+                        <a href="{{ path('cfp_list', {'page': 1, 'tag': tag}) }}" class="label label-default conf-tag">{{ tag }}</a>
+                    {% endfor %}
+                </p>
+            </div>
         </div>
 
         <div class="col-md-9 col-md-pull-3">

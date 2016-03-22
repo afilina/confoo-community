@@ -5,21 +5,38 @@
 
 {% block body %}
 
-    <a href="{{ path('events_list', {'page': 1, 'tag': 'all'}) }}?{{ queryString }}" class="label label-default conf-tag">all tags</a>
-    {% for tag in tags %}
-        <a href="{{ path('events_list', {'page': 1, 'tag': tag}) }}?{{ queryString }}" class="label label-default conf-tag">{{ tag }}</a>
-    {% endfor %}
-
     <h1>Upcoming Events</h1>
 
     <div class="row">
 
         <div class="col-md-3 col-md-push-9">
-            <p>Advanced search</p>
-            {{ form_start(searchForm) }}
-            {{ form_widget(searchForm) }}
-            {{ form_rest(searchForm) }}
-            {{ form_end(searchForm) }}
+            <p class="visible-sm-block visible-xs-block">
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#advancedSearch" aria-expanded="false" aria-controls="advancedSearch">
+                  Advanced search <span class="caret"></span>
+                </a>
+            </p>
+            <h3 class="hidden-xs hidden-sm">Advanced search</h3>
+            <div class="collapse box-collapse-sm" id="advancedSearch">
+                {{ form_start(searchForm) }}
+                {{ form_widget(searchForm) }}
+                {{ form_rest(searchForm) }}
+                {{ form_end(searchForm) }}
+            </div>
+
+            <p class="visible-sm-block visible-xs-block">
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tagSearch" aria-expanded="false" aria-controls="tagSearch">
+                  Tag search <span class="caret"></span>
+                </a>
+            </p>
+            <h3 class="hidden-xs hidden-sm">Tag search</h3>
+            <div class="collapse box-collapse-sm" id="tagSearch">
+                <p>
+                    <a href="{{ path('cfp_list', {'page': 1, 'tag': 'all'}) }}" class="label label-default conf-tag">all tags</a>
+                    {% for tag in tags %}
+                        <a href="{{ path('cfp_list', {'page': 1, 'tag': tag}) }}" class="label label-default conf-tag">{{ tag }}</a>
+                    {% endfor %}
+                </p>
+            </div>
         </div>
 
         <div class="col-md-9 col-md-pull-3">
