@@ -48,13 +48,14 @@
                 <br>
                 Speaker kit includes: {{ event.organization.speaker_kit.getIncluded()|join(', ') }}
             </p>
-            <p>
-                {% for tag in event.organization.tags %}
-                    <span class="label label-default conf-tag">{{ tag }}</span>
-                {% endfor %}
-            </p>
 
         {% endif %}
+
+        <p>
+            {% for tag in event.organization.tags %}
+                <span class="label label-default conf-tag">{{ tag }}</span>
+            {% endfor %}
+        </p>
 
     </div>
 
