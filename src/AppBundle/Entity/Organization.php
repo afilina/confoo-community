@@ -116,7 +116,13 @@ class Organization
 
     public function mergeIcalData($icalData)
     {
-        $vcalendar = VObject\Reader::read($icalData);
+        try {
+            $vcalendar = VObject\Reader::read($icalData);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+        
+
         if (count($vcalendar->VEVENT) == 0) {
             return;
         }
@@ -137,7 +143,8 @@ class Organization
             }
 
             $eventEntity->unique_key = $eventKey;
-            $eventEntity->name = (string)$event->SUMMARY;
+            // $eventEntity->name = (string)$event->SUMMARY;
+            $eventEntity->name = $this->name.' / '.(string)$event->SUMMARY;
             $location = (string)$event->LOCATION;
             if (empty($location)) {
                 if (isset($this->locations)) {

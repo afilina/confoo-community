@@ -31,6 +31,7 @@ class FetchFeedsCommand extends ContainerAwareCommand
         // Bootstrap
         $output->getFormatter()->setStyle('ok', new OutputFormatterStyle('black', 'green'));
         $output->getFormatter()->setStyle('warn', new OutputFormatterStyle('black', 'yellow'));
+        $output->getFormatter()->setStyle('err', new OutputFormatterStyle('black', 'red'));
 
         $this->orgRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Organization');
 
@@ -62,13 +63,17 @@ class FetchFeedsCommand extends ContainerAwareCommand
 
             if (isset($userGroup['calendar_feed']) && !empty($userGroup['calendar_feed'])) {
                 // Only parse .ical for now
-                if (in_array(substr($userGroup['calendar_feed'], -5), ['.ical', '/ical', 'ical/'])) {
+                // if (in_array(substr($userGroup['calendar_feed'], -5), ['.ical', '/ical', 'ical/'])) {
                     $response = $client->request('GET', $userGroup['calendar_feed'], [
                         'timeout' => 2.0,
                     ]);
                     $icalData = $response->getBody()->getContents();
-                    $orgEntity->mergeIcalData($icalData);
-                }
+                    try {
+                        $orgEntity->mergeIcalData($icalData);
+                    } catch (\Exception $e) {
+                        $output->writeln("<err>Could not parse calendar feed for {$orgEntity->name}.</err>");
+                    }
+                    
             }
 
             $em->persist($orgEntity);
