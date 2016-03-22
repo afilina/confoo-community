@@ -37,6 +37,11 @@ class Organization
     protected $tags = [];
 
     /**
+     * @ORM\Column(type="json_array")
+     */
+    protected $locations = [];
+
+    /**
      * @ORM\Column(type="datetime")
      */
     protected $first_event;
@@ -111,6 +116,9 @@ class Organization
         }
         if (!empty($array['twitter'])) {
             $this->twitter = $array['twitter'];
+        }
+        if (!empty($array['locations'])) {
+            $this->locations = $array['locations'];
         }
     }
 

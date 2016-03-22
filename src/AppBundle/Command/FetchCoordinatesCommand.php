@@ -33,14 +33,15 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
 
         $this->eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Event');
 
-        $this->executeOnce();
+        $this->executeOnce($output);
     }
 
-    public function executeOnce()
+    public function executeOnce($output)
     {
         // Fetch and parse JSON
-        $api_key = $this->getContainer()->getParameter('google_api_key');
+        $apiKey = $this->getContainer()->getParameter('google_api_key');
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $cacheManager = $this->getContainer()->get('app.cache');
 
         $client = new Client();
 
@@ -54,79 +55,50 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
         $batchI = 0;
 
         foreach ($events as $event) {
-
             // Geocode via Google
-            $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($event['location']['name']).'&key='.$api_key;
-            $response = $client->request('GET', $url, [
-                'timeout' => 2.0,
-            ]);
-            $body = $response->getBody()->getContents();
-            // $body = '{
-            //    "results" : [
-            //       {
-            //          "address_components" : [
-            //             {
-            //                "long_name" : "Montreal",
-            //                "short_name" : "Montreal",
-            //                "types" : [ "locality", "political" ]
-            //             },
-            //             {
-            //                "long_name" : "Montreal",
-            //                "short_name" : "Montreal",
-            //                "types" : [ "administrative_area_level_2", "political" ]
-            //             },
-            //             {
-            //                "long_name" : "Québec",
-            //                "short_name" : "QC",
-            //                "types" : [ "administrative_area_level_1", "political" ]
-            //             },
-            //             {
-            //                "long_name" : "Canada",
-            //                "short_name" : "CA",
-            //                "types" : [ "country", "political" ]
-            //             }
-            //          ],
-            //          "formatted_address" : "Montreal, QC, Canada",
-            //          "geometry" : {
-            //             "bounds" : {
-            //                "northeast" : {
-            //                   "lat" : 45.7056146,
-            //                   "lng" : -73.4752355
-            //                },
-            //                "southwest" : {
-            //                   "lat" : 45.4146367,
-            //                   "lng" : -73.947824
-            //                }
-            //             },
-            //             "location" : {
-            //                "lat" : 45.5016889,
-            //                "lng" : -73.567256
-            //             },
-            //             "location_type" : "APPROXIMATE",
-            //             "viewport" : {
-            //                "northeast" : {
-            //                   "lat" : 45.7056146,
-            //                   "lng" : -73.4752355
-            //                },
-            //                "southwest" : {
-            //                   "lat" : 45.4146367,
-            //                   "lng" : -73.947824
-            //                }
-            //             }
-            //          },
-            //          "place_id" : "ChIJDbdkHFQayUwR7-8fITgxTmU",
-            //          "types" : [ "locality", "political" ]
-            //       }
-            //    ],
-            //    "status" : "OK"
-            // }
-            // ';
-            $json = json_decode($body, true);
-            $data = $json['results'][0];
+            $searches = [];
+            $searches[] = $event['location']['name'];
+            if (count($event['organization']['locations']) == 1) {
+                $searches[] = $event['organization']['locations'][0]['name'];
+            }
+            $data = null;
+
+            foreach ($searches as $search) {
+
+                if ($search == 'Not specified') {
+                    continue;
+                }
+
+                $body = $cacheManager->remember('googlemaps', strtolower($search), function() use ($search, $apiKey, $client, $output) {
+                    $output->writeln("Fetching coordinates for {$search}...");
+                    $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($search).'&key='.$apiKey;
+                    $response = $client->request('GET', $url, [
+                        'timeout' => 2.0,
+                    ]);
+                    $body = $response->getBody()->getContents();
+                    // Compact json response
+                    $body = json_decode($body, true);
+                    $body = json_encode($body);
+                    return $body;
+                });
+
+                $json = json_decode($body, true);
+                if (!isset($json['results']) || count($json['results']) == 0) {
+                    $output->writeln("<err>Could not fetch coordinates for {$search}.</err>");
+                    continue;
+                }
+                $data = $json['results'][0];
+                return $data;
+            }
+
+            if ($data == null) {
+                // $output->writeln("<err>Could not fetch coordinates for \"{$event['name']}\".</err>");
+                continue;
+            }
 
             // Reformat the location since we already have the new address
             // $event->location['name'] = $data['address_components']['formatted_address'];
-
+            $output->writeln("Saving coordinates for \"{$event['name']}\"...");
             $sql = 'UPDATE event SET latitude = :lat, longitude = :lng WHERE id = :id';
             $stmt = $em->getConnection()->prepare($sql);
             $stmt->bindParam(':lat', $data['geometry']['location']['lat']);
@@ -139,5 +111,7 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
             }
             ++$batchI;
         }
+
+        $output->writeln("<ok>Done</ok>");
     }
 }

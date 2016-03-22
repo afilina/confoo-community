@@ -33,7 +33,7 @@ class OrganizationRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, key, name, website, twitter, tags, type} AS item')
+            ->select('PARTIAL root.{id, key, name, locations, website, twitter, tags, type} AS item')
             ->addSelect('event')
             ->leftJoin('root.events', 'event')
             ->addSelect('speaker_kit')
@@ -49,7 +49,7 @@ class OrganizationRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, key, name, website, twitter, tags, type} AS item')
+            ->select('PARTIAL root.{id, key, name, locations, website, twitter, tags, type} AS item')
             ->addSelect('PARTIAL event.{id, location, event_start, event_end, cfp_start, cfp_end}')
             ->leftJoin('root.events', 'event')
         ;

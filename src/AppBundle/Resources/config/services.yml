@@ -10,3 +10,7 @@ services:
         arguments: ['@logger', '%mailer_api_key%', '%mailer_disable_delivery%']
         tags:
             - { name: monolog.logger, handler: mailer }
+
+    app.cache:
+        class: AppBundle\Adapter\Cache\Database\DatabaseCache
+        arguments: ['@doctrine', "AppBundle\\Entity\\Cache"]
