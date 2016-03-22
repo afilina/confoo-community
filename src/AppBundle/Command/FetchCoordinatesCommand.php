@@ -62,8 +62,8 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
             if (count($event['organization']['locations']) == 1) {
                 $searches[] = $event['organization']['locations'][0]['name'];
             }
+            
             $data = null;
-
             foreach ($searches as $search) {
 
                 if ($search == 'Not specified') {
@@ -89,7 +89,6 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
                     continue;
                 }
                 $data = $json['results'][0];
-                return $data;
             }
 
             if ($data == null) {
