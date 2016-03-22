@@ -31,9 +31,9 @@
             <h3 class="hidden-xs hidden-sm">Tag search</h3>
             <div class="collapse box-collapse-sm" id="tagSearch">
                 <p>
-                    <a href="{{ path('cfp_list', {'page': 1, 'tag': 'all'}) }}" class="label label-default conf-tag">all tags</a>
+                    <a href="{{ path('events_list', {'page': 1, 'tag': 'all'}) }}" class="label label-default conf-tag">all tags</a>
                     {% for tag in tags %}
-                        <a href="{{ path('cfp_list', {'page': 1, 'tag': tag}) }}" class="label label-default conf-tag">{{ tag }}</a>
+                        <a href="{{ path('events_list', {'page': 1, 'tag': tag}) }}" class="label label-default conf-tag">{{ tag }}</a>
                     {% endfor %}
                 </p>
             </div>
