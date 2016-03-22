@@ -30,6 +30,7 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
         // Bootstrap
         $output->getFormatter()->setStyle('ok', new OutputFormatterStyle('black', 'green'));
         $output->getFormatter()->setStyle('warn', new OutputFormatterStyle('black', 'yellow'));
+        $output->getFormatter()->setStyle('err', new OutputFormatterStyle('black', 'red'));
 
         $this->eventRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Event');
 
@@ -111,7 +112,6 @@ class FetchCoordinatesCommand extends ContainerAwareCommand
             }
             ++$batchI;
         }
-
         $output->writeln("<ok>Done</ok>");
     }
 }

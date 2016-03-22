@@ -30,6 +30,7 @@ class FetchConferencesCommand extends ContainerAwareCommand
         // Bootstrap
         $output->getFormatter()->setStyle('ok', new OutputFormatterStyle('black', 'green'));
         $output->getFormatter()->setStyle('warn', new OutputFormatterStyle('black', 'yellow'));
+        $output->getFormatter()->setStyle('err', new OutputFormatterStyle('black', 'red'));
 
         $this->orgRepo = $this->getContainer()->get('doctrine')->getRepository('AppBundle\Entity\Organization');
 
