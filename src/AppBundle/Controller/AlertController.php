@@ -46,6 +46,18 @@ class AlertController extends Controller
                     break;
             }
 
+            // Users should be able to automatically update frequency instead of adding a new record.
+            $alertRepo = $this->container->get('doctrine')->getRepository('AppBundle\Entity\CfpAlert');
+            $existingAlert = $alertRepo->findItem(new \ApiBundle\Repository\ApiCriteria([
+                'email' => $alert->email,
+                'tag' => $alert->tag,
+            ]), AbstractQuery::HYDRATE_OBJECT)['data'];
+            if ($existingAlert) {
+                $existingAlert->frequency = $alert->frequency;
+                $existingAlert->is_enabled = true;
+                $alert = $existingAlert;
+            }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($alert);
             $em->flush();

@@ -29,7 +29,14 @@ class CfpAlertRepository extends AbstractRepository
 
     public function findItem(ApiCriteria $criteria, $hydration = 2)
     {
-        throw new \Exception("Not allowed to get item {$this->name} through this API.");
+        $query = $this
+            ->createQueryBuilder('root')
+            ->select('PARTIAL root.{id, tag, email, token, frequency, is_enabled} as item')
+        ;
+        $apiQuery = new ApiQuery($this, $query, $criteria);
+
+        $result = $apiQuery->queryItem($hydration);
+        return $result;
     }
 
     public function findList(ApiCriteria $criteria, $hydration = 2)
@@ -48,6 +55,18 @@ class CfpAlertRepository extends AbstractRepository
     {
         $queryBuilder->andWhere('root.is_enabled = :is_enabled');
         $queryBuilder->setParameter('is_enabled', $value);
+    }
+
+    public function addEmailFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.email = :email');
+        $queryBuilder->setParameter('email', $value);
+    }
+
+    public function addTagFilter(QueryBuilder &$queryBuilder, $value)
+    {
+        $queryBuilder->andWhere('root.tag = :tag');
+        $queryBuilder->setParameter('tag', $value);
     }
 
     public function transformArrayResult(ApiCriteria $criteria, &$item)
