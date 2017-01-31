@@ -1,7 +1,7 @@
-community.confoo
-================
+# ConFoo Community
 
-A Symfony project created on March 10, 2016, 12:53 pm.
+https://community.confoo.ca
 
-Clear cache on prod:
-bin/console cache:clear --env=prod && chown -R www-data:www-data var/cache
+Please submit any issues or patches for the site here.
+
+To submit issues or patches to the underlying open data, please go to this [https://github.com/afilina/dev-community-data](open source project) instead.
