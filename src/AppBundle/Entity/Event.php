@@ -71,6 +71,11 @@ class Event
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
+    protected $cfp_website = null;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     protected $session_feed = null;
 
     /**
@@ -147,6 +152,9 @@ class Event
         }
         if (!empty($array['hashtag'])) {
             $this->hashtag = $array['hashtag'];
+        }
+        if (isset($array['cfp_website'])) {
+            $this->cfp_website = $array['cfp_website'];
         }
     }
 }

@@ -31,7 +31,7 @@ class EventRepository extends AbstractRepository
     {
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
+            ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end, cfp_website} AS item')
             ->addSelect('PARTIAL org.{id, name, locations, website, twitter, tags, type}')
             ->innerJoin('root.organization', 'org')
         ;
@@ -47,7 +47,7 @@ class EventRepository extends AbstractRepository
 
         $query = $this
             ->createQueryBuilder('root')
-            ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end} AS item')
+            ->select('PARTIAL root.{id, name, location, cfp_start, cfp_end, event_start, event_end, cfp_website} AS item')
             ->addSelect('PARTIAL org.{id, name, locations, website, twitter, tags, type}')
             ->innerJoin('root.organization', 'org')
         ;

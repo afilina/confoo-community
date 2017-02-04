@@ -69,19 +69,7 @@ class EventController extends Controller
                     'timeout' => 2.0,
                 ]);
                 $body = $response->getBody()->getContents();
-                // $body = '{
-                //    "results" : [
-                //       {
-                //          "geometry" : {
-                //             "location" : {
-                //                "lat" : 45.5016889,
-                //                "lng" : -73.567256
-                //             }
-                //          }
-                //       }
-                //    ]
-                // }
-                // ';
+
                 $json = json_decode($body, true);
 
                 if (count($json['results']) > 0) {

@@ -19,6 +19,12 @@
                 <i class="fa fa-globe"></i>
                 Website
             </a>
+            {% if event.cfp_website %}
+                <a href="{{ event.cfp_website }}" class="btn btn-default">
+                    <i class="fa fa-bullhorn"></i>
+                    Call for Papers
+                </a>
+            {% endif %}
             <a href="https://twitter.com/{{ event.organization.twitter }}" class="btn btn-default">
                 <i class="fa fa-twitter"></i>
                 Twitter
