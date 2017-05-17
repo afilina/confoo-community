@@ -37,22 +37,37 @@ class FetchConferencesCommand extends ContainerAwareCommand
         $this->executeOnce();
     }
 
+    public function loadConferences()
+    {
+        `wget https://github.com/afilina/dev-community-data/archive/master.zip`;
+        `unzip master.zip -d tmp`;
+        chdir('tmp/dev-community-data-master/data/conferences');
+        $fileNames = glob('*.json');
+        return $fileNames;
+    }
+
+    public function cleanup()
+    {
+        $dir = __DIR__.'/../../../';
+        chdir($dir);
+        `rm -R tmp`;
+        `rm master.zip`;
+    }
+
     public function executeOnce()
     {
-        // Fetch and parse JSON
-        $url = 'https://raw.githubusercontent.com/afilina/dev-community-data/master/data/conferences.json';
-        $client = new Client();
-        $response = $client->request('GET', $url, [
-            'timeout' => 2.0,
-        ]);
-        $conferences = json_decode($response->getBody()->getContents(), true);
+        $dir = __DIR__.'/../../../tmp/dev-community-data-master/data/conferences';
+        $fileNames = $this->loadConferences();
 
         // Merge with database
         $batchSize = 50;
         $batchI = 0;
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
 
-        foreach ($conferences as $conference) {
+        foreach ($fileNames as $fileName) {
+            $conference = json_decode(file_get_contents($dir.'/'.$fileName), true);
+            $conference['key'] = preg_replace('/.json/', '', $fileName);
+
             $apiCriteria = new ApiCriteria(['key' => $conference['key']]);
             $orgEntity = $this->orgRepo->findItem($apiCriteria, 1)['data'];
             if ($orgEntity == null) {
@@ -69,5 +84,7 @@ class FetchConferencesCommand extends ContainerAwareCommand
             ++$batchI;
         }
         $em->flush();
+
+        $this->cleanup();
     }
 }
