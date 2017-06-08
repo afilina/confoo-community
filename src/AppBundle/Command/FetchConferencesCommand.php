@@ -50,7 +50,7 @@ class FetchConferencesCommand extends ContainerAwareCommand
     {
         $dir = __DIR__.'/../../../';
         chdir($dir);
-        `rm -R tmp`;
+        `rm -fr tmp`;
         `rm master.zip`;
     }
 
